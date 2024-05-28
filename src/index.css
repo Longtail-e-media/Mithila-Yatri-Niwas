@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html {
+    @apply scroll-smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title;
+  }
+
+  a,
+  p,
+  span,
+  button,
+  input,
+  label,
+  body {
+    @apply font-body;
+  }
+
+  section {
+    /* @apply py-32 px-4 sm:py-40 md:px-12 md:pt-[12rem] md:pb-[7.5rem] lg:pt-[16rem] lg:pb-[10rem] relative z-10; */
+    @apply py-20 px-4 sm:py-36 md:px-12 md:pt-[10rem] md:pb-[7.5rem] lg:pt-[12rem] lg:pb-[9rem] relative z-10;
+  }
+
+  .transition-linear {
+    @apply transition-all duration-300 ease-linear;
+  }
+
+  .responsive-banner {
+    @apply -mt-[calc(0rem+0rem)] sm:-mt-[calc(0rem+3rem)] md:-mt-[calc(6rem+3rem)];
+  }
+}
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  ::-webkit-scrollbar:hover {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-logo-bg rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    /* @apply bg-logo-clr rounded-full border-2 border-solid border-alt-logo-clr; */
+    @apply bg-logo-clr rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-alt-logo-clr;
+  }
+
+  ::selection {
+    @apply bg-logo-clr text-custom-white;
+  }
+
+  h1::selection,
+  h2::selection,
+  h3::selection,
+  h4::selection,
+  h5::selection,
+  a::selection {
+    @apply bg-logo-bg text-logo-clr;
+
+  }
+
+  div[aria-hidden=true] {
+    display: none;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    @apply border-b-2 border-logo-clr transition-[background-color] duration-[5000s] delay-0 ease-in-out;
+  }
+
+}
+
+
+.slick-initialized .slick-slide {
+  @apply px-2;
+}
+
+.slick-dots li {
+  @apply cursor-pointer;
+}
+
+.slick-dots li.slick-active button:before {
+  @apply text-logo-clr scale-150;
+}
+
+.slick-initialized .slick-slide {
+  @apply p-0;
+}
+
+.home-accommodation .slick-initialized .slick-slide {
+  @apply p-2;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
