@@ -34,18 +34,18 @@ const Contact = () => {
 
               <li className="flex items-center justify-start gap-2 text-custom-white hover:scale-105 hover:text-white transition-linear">
                 <TbPhone className="text-xl" />
-                <a href="tel:+97714229996" target="_blank" rel="noopener">
-                  +977-14229996
+                <a href="tel:+9779820113410" target="_blank" rel="noopener">
+                  +977-9820113410
                 </a>
               </li>
               <li className="flex items-center justify-start gap-2 text-custom-white hover:scale-105 hover:text-white transition-linear">
                 <HiOutlineMail className="text-xl" />
                 <a
-                  href="mailto:info@hotelmithilanepal.com"
+                  href="mailto:fo@mithilayatriniwas.com"
                   target="_blank"
                   rel="noopener"
                 >
-                  info@hotelmithilanepal.com
+                  fo@mithilayatriniwas.com
                 </a>
               </li>
             </ul>
@@ -85,8 +85,6 @@ const Contact = () => {
           </form>
         </div>
       </section> */}
-
-      <Direction />
 
       <section className="bg-logo-bg">
         <SvgWave />
@@ -132,6 +130,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      <Direction />
     </>
   );
 };

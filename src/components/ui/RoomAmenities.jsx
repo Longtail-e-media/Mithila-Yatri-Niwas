@@ -13,7 +13,7 @@ const RoomAmenities = ({ amenities, amenitiesTitle }) => {
               <img
                 src={amenity.icon}
                 alt={amenity.title}
-                className="w-8 h-8 text-alt-logo-clr"
+                className="w-6 h-6 text-alt-logo-clr"
               />
             )}
             <p className="text-xs md:text-xs xl:text-base">{amenity.title}</p>

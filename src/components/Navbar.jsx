@@ -6,7 +6,6 @@ import {
   navLinks,
   logo,
   Button,
-  footerMenuItems,
   LocationDetails,
   Socials,
   ScrollToTopOnNavigate,

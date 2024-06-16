@@ -1,4 +1,5 @@
 import logo from "../assets/logo.svg";
+import mithilaVideo from "../assets/mithila.mp4";
 
 import SvgWave from "../components/ui/SvgWave";
 import AboutGallery from "../components/ui/AboutGallery";
@@ -66,8 +67,11 @@ import rolwalingValley from "../assets/places/rolwaling-valley.webp";
 import vivahMandap from "../assets/places/vivah-mandap.webp";
 import jaleshwar from "../assets/places/jaleshwar.webp";
 
+import hairdryer from "../assets/graphics/hairdryer.webp";
+
 export {
   logo,
+  mithilaVideo,
   About,
   AboutGallery,
   Accommodation,
@@ -109,33 +113,43 @@ import {
   FaInstagram,
   // FaTripadvisor,
   FaWhatsapp,
-  FaUtensils,
-  FaCoffee,
   FaGlassCheers,
   FaChalkboardTeacher,
-  FaMusic,
   FaWineBottle,
-  FaBeer,
-  FaTemperatureHigh,
-  FaWifi,
   FaTv,
-  FaAirFreshener,
-  FaMicrophone,
-  FaVideo,
-  FaMapPin,
-  FaPrint,
-  FaBed,
-  FaBath,
 } from "react-icons/fa";
-import { FaBottleWater } from "react-icons/fa6";
 import {
   TbPhone,
   TbBrandFacebook,
   TbPencilQuestion,
   TbCalendarEvent,
   TbDeviceLandlinePhone,
+  TbAirConditioning,
+  TbToiletPaper,
+  TbChalkboard,
+  TbVideo,
+  TbMicrophone,
+  TbPrinter,
+  TbDeviceProjector,
+  TbDeviceSpeaker,
+  TbPinned,
+  TbDesk,
+  TbWifi,
+  TbChefHat,
+  TbMusic,
+  TbCoffee,
+  TbPencil,
+  TbIroning,
+  TbCurrentLocation,
+  TbPaperBag,
+  TbBottle,
+  TbBasket,
+  TbVip,
+  TbUsersGroup,
 } from "react-icons/tb";
 import { HiOutlineMail } from "react-icons/hi";
+
+import { LiaShoePrintsSolid } from "react-icons/lia";
 
 import { FiUser } from "react-icons/fi";
 import {
@@ -143,31 +157,44 @@ import {
   MdOutlineBed,
   MdOutlineBrunchDining,
   MdTableChart,
-  MdTableRestaurant,
-  MdSpeaker,
+  // MdTableRestaurant,
+  MdOutlineCoffeeMaker,
+  MdOutlineRoomService,
+  MdOutlineBathtub,
+  MdChairAlt,
+  MdRoomService,
+  MdOutlineHotel,
 } from "react-icons/md";
 import { GrLocation } from "react-icons/gr";
 import {
   GiBowlOfRice,
   GiCandleLight,
-  GiCookingPot,
   GiHotMeal,
+  GiKnifeFork,
   GiTowel,
-  GiSlippers,
 } from "react-icons/gi";
+
 import { IoMdClock, IoMdResize, IoIosPeople } from "react-icons/io";
-import { IoBed, IoPricetagSharp } from "react-icons/io5";
-import { PiProjectorScreenFill } from "react-icons/pi";
-import { BsFillProjectorFill } from "react-icons/bs";
+import {
+  IoBed,
+  IoPricetagSharp,
+  IoAlarmOutline,
+  IoDocumentOutline,
+} from "react-icons/io5";
+import { PiProjectorScreenBold, PiLockersBold } from "react-icons/pi";
 
 import expedia from "../assets/ota/expedia.webp";
 import tripadvisor from "../assets/ota/tripadvisor.webp";
 import bookingcom from "../assets/ota/bookingcom.webp";
 import agoda from "../assets/ota/agoda.webp";
+import makemytrip from "../assets/ota/makemytrip.webp";
 
 import { CgArrowLongRight } from "react-icons/cg";
 
 export { CgArrowLongRight, FaWhatsapp };
+
+export const rojai =
+  "https://www.mithilayatriniwas.com/result.php?hotel_code=gBRaLW";
 
 export const navLinks = [
   // {
@@ -262,7 +289,7 @@ export const socialLinks = [
   // {
   //   icon: HiOutlineMail,
   //   title: "Email Address",
-  //   url: "mailto:info@hotelmithilanepal.com",
+  //   url: "mailto:fo@mithilayatriniwas.com",
   // },
   // {
   //   icon: FaTripadvisor,
@@ -278,7 +305,9 @@ export const aboutContents = {
       // "Mithila Yatri Niwas a luxurious hotel property in Janakpur is set at just 10 min walking distance from the famous Janaki Temple along the banks of Dashrath Lake.",
       "Mithila Yatri Niwas - A luxurious retreat in Janakpur, just a 10-minute walk from the sacred Janaki Temple.",
     paragraph:
-      "Discover the allure of Janakpur at Mithila Yatri Niwas, where luxury meets legacy just steps away from the divine Janaki Temple and the peaceful Dashrath Lake. Nestled in the city’s vibrant heart, our hotel is a sanctuary of modern comforts, offering unparalleled access to sacred sites and cultural treasures. Book your stay and be captivated by the seamless blend of Janakpur’s spiritual heritage and our hotel’s elegant charm.",
+      "Discover the allure of Janakpur at Mithila Yatri Niwas, where luxury meets legacy just steps away from the divine Janaki Temple and the peaceful Dashrath Lake. Nestled in the city’s vibrant heart, our hotel is a sanctuary of modern comforts, offering unparalleled access to sacred sites and cultural treasures.",
+    subheading: "Unlock Unforgettable Memories - ",
+    book: "Book Your Stay",
   },
   galleryImages: [
     {
@@ -347,9 +376,10 @@ export const dineContents = [
           {
             title: "Informations",
             data: {
-              Occupancy: { icon: IoIosPeople, value: "65 pax" },
+              Occupancy: { icon: IoIosPeople, value: "65 - 70 pax" },
               Cuisine: { icon: GiBowlOfRice, value: "Multicuisine" },
-              Timing: { icon: IoMdClock, value: "7:00 AM - 10:30 PM" },
+              Service: { icon: MdRoomService, value: "24 hour room service" },
+              Timing: { icon: IoMdClock, value: "06:30 AM - 10:00 PM" },
             },
           },
         ],
@@ -364,29 +394,29 @@ export const dineContents = [
             ],
           },
         ],
-        policies: [
-          {
-            title: "Policies",
-            content: [
-              "Children aged 0 - 4 years dining with parents receive complimentary meals.",
-              "Children aged 5 - 10 years dining with parents receive a 50% discount on meals.",
-              "Breakfast is available at USD $8 or INR 500 per person.",
-            ],
-          },
-        ],
+        // policies: [
+        //   {
+        //     title: "Policies",
+        //     content: [
+        //       "Children aged 0 - 4 years dining with parents receive complimentary meals.",
+        //       "Children aged 5 - 10 years dining with parents receive a 50% discount on meals.",
+        //       "Breakfast is available at USD $8 or INR 500 per person.",
+        //     ],
+        //   },
+        // ],
         dineAmenities: [
           { icon: MdTableChart, title: "Ample Seating" },
-          { icon: FaUtensils, title: "Cutlery Provided" },
+          { icon: GiKnifeFork, title: "Cutlery Provided" },
           { icon: FaGlassCheers, title: "Beverage Service" },
           { icon: FaChalkboardTeacher, title: "Menu Display" },
-          { icon: FaMusic, title: "Background Music" },
-          { icon: FaCoffee, title: "Coffee Station" },
+          { icon: TbMusic, title: "Background Music" },
+          { icon: TbCoffee, title: "Coffee Station" },
           { icon: FaWineBottle, title: "Wine Selection" },
-          { icon: FaBeer, title: "Beer on Tap" },
+          { icon: GiBowlOfRice, title: "Multicuisine" },
           { icon: GiCandleLight, title: "Ambiance Lighting" },
-          { icon: FaTemperatureHigh, title: "Air Conditioner" },
-          { icon: GiCookingPot, title: "Live Cooking" },
-          { icon: GiHotMeal, title: "Hot Meal Counter" },
+          { icon: TbAirConditioning, title: "Air Conditioner" },
+          { icon: TbChefHat, title: "Experienced Chef" },
+          { icon: GiHotMeal, title: "24 Hour Service" },
         ],
       },
     ],
@@ -418,13 +448,13 @@ export const hallContents = [
           {
             title: "Setup Style",
             data: {
-              "U shape": { icon: ushape, value: "45 pax" },
+              "U shape": { icon: ushape, value: "95 pax" },
               Classroom: {
                 icon: classroom,
-                value: "150 pax",
+                value: "125 pax",
               },
-              Theatre: { icon: theatre, value: "400 pax" },
-              "Round Table": { icon: round, value: "180 pax" },
+              Theatre: { icon: theatre, value: "300-350 pax" },
+              "Round Table": { icon: round, value: "120 pax" },
             },
           },
         ],
@@ -453,18 +483,18 @@ export const hallContents = [
           },
         ],
         hallAmenities: [
-          { icon: FaWifi, title: "Wifi" },
-          { icon: MdSpeaker, title: "PA System" },
-          { icon: FaMicrophone, title: "Microphone" },
-          { icon: FaVideo, title: "Video Conferencing" },
-          { icon: MdTableRestaurant, title: "Furniture" },
+          { icon: TbWifi, title: "Wifi" },
+          { icon: TbDeviceProjector, title: "Projector" },
+          { icon: TbDeviceSpeaker, title: "PA System" },
+          { icon: TbMicrophone, title: "Microphone" },
           { icon: FaTv, title: "Computer/ Laptop" },
-          { icon: FaAirFreshener, title: "Air Conditioner" },
-          { icon: PiProjectorScreenFill, title: "Flip chart" },
-          { icon: FaMapPin, title: "Soft (pin) board" },
-          { icon: FaPrint, title: "Printing Service" },
-          { icon: GiTowel, title: "Projector" },
-          { icon: BsFillProjectorFill, title: "White Board" },
+          { icon: TbDesk, title: "Work Desk" },
+          { icon: TbChalkboard, title: "White Board" },
+          { icon: TbAirConditioning, title: "Air Conditioner" },
+          { icon: PiProjectorScreenBold, title: "Flip chart" },
+          { icon: TbPinned, title: "Soft (pin) board" },
+          { icon: TbPrinter, title: "Printing Service" },
+          { icon: TbVideo, title: "Video Conferencing" },
         ],
       },
       {
@@ -485,13 +515,13 @@ export const hallContents = [
             title: "Setup Style",
 
             data: {
-              "U shape": { icon: ushape, value: "N/A pax" },
+              "U shape": { icon: ushape, value: "10 pax" },
               Classroom: {
                 icon: classroom,
-                value: "12 pax",
+                value: "15 pax",
               },
-              Theatre: { icon: theatre, value: "24 pax" },
-              "Round Table": { icon: round, value: "N/A pax" },
+              Theatre: { icon: theatre, value: "18 pax" },
+              "Round Table": { icon: round, value: "10 pax" },
             },
           },
         ],
@@ -519,6 +549,89 @@ export const hallContents = [
             ],
           },
         ],
+        hallAmenities: [
+          { icon: TbWifi, title: "Wifi" },
+          // { icon: TbDeviceProjector, title: "Projector" },
+          // { icon: TbDeviceSpeaker, title: "PA System" },
+          // { icon: TbMicrophone, title: "Microphone" },
+          // { icon: FaTv, title: "Computer/ Laptop" },
+          { icon: TbDesk, title: "Work Desk" },
+          // { icon: TbChalkboard, title: "White Board" },
+          { icon: TbAirConditioning, title: "Air Conditioner" },
+          { icon: MdChairAlt, title: "Chair" },
+          { icon: TbPencil, title: "Pen & Pencil" },
+          { icon: IoDocumentOutline, title: "Paper" },
+          // { icon: TbPinned, title: "Soft (pin) board" },
+          // { icon: TbPrinter, title: "Printing Service" },
+          // { icon: TbVideo, title: "Video Conferencing" },
+        ],
+      },
+      {
+        id: "bhojan-griha",
+        title: "Bhojan Griha",
+        description:
+          "The perfect venue for intimate as well as group gatherings and celebrations, where every detail is crafted to perfection.",
+        booking: "/enquiry-form",
+        router: "/hall#bhojan-griha",
+        image: [
+          {
+            src: lobby1,
+            alt: "PDR Hall",
+          },
+        ],
+        informations: [
+          {
+            title: "Setup Style",
+
+            data: {
+              "U shape": { icon: ushape, value: "60-65 pax" },
+              Classroom: {
+                icon: classroom,
+                value: "40-45 pax",
+              },
+              Theatre: { icon: theatre, value: "85-95 pax" },
+              "Round Table": { icon: round, value: "60 pax" },
+            },
+          },
+        ],
+        facilities: [
+          {
+            title: "Facilities",
+            content: [
+              "Modern audiovisual equipment for presentations and meetings.",
+              "Flexible seating arrangements suitable for small group discussions or presentations.",
+              "Complimentary high-speed internet access for all attendees.",
+              "Professional event coordination and support throughout your event.",
+              "Comfortable and well-lit environment for productive meetings.",
+            ],
+          },
+        ],
+        policies: [
+          {
+            title: "Policies",
+            content: [
+              "Advance booking is recommended to secure the hall for your event.",
+              "Any damages to the hall or equipment will be charged to the organizer.",
+              "Outside catering may be permitted with prior approval and additional charges.",
+              "Smoking and alcohol consumption may be restricted based on venue policies.",
+              "Please adhere to the designated capacity limits for safety and comfort.",
+            ],
+          },
+        ],
+        hallAmenities: [
+          { icon: TbWifi, title: "Wifi" },
+          { icon: TbDeviceProjector, title: "Projector" },
+          { icon: TbDeviceSpeaker, title: "PA System" },
+          { icon: TbMicrophone, title: "Microphone" },
+          { icon: FaTv, title: "Computer/ Laptop" },
+          { icon: TbDesk, title: "Work Desk" },
+          { icon: TbChalkboard, title: "White Board" },
+          { icon: TbAirConditioning, title: "Air Conditioner" },
+          { icon: PiProjectorScreenBold, title: "Flip chart" },
+          { icon: TbPinned, title: "Soft (pin) board" },
+          { icon: TbPrinter, title: "Printing Service" },
+          { icon: TbVideo, title: "Video Conferencing" },
+        ],
       },
     ],
   },
@@ -539,8 +652,7 @@ export const accommodationContents = [
         description:
           // "Escape to our Deluxe Room, where comfort meets chic. Wrapped in warmth and luxury, it's a retreat that promises restful nights and serene mornings. Experience the perfect blend of elegance and homely charm, all in one exquisite space.",
           "A cozy retreat blending chic style with the comforts of home for your peaceful stay.",
-        booking:
-          "https://www.mithilayatriniwas.com/result.php?hotel_code=gBRaLW",
+        booking: rojai,
         image: [
           {
             src: room1,
@@ -551,11 +663,11 @@ export const accommodationContents = [
           {
             title: "Informations",
             data: {
-              "Total Rooms": { icon: IoBed, value: "18 rooms" },
-              Price: { icon: IoPricetagSharp, value: "Starting USD 40" },
+              "Total Rooms": { icon: IoBed, value: "20 rooms" },
+              Price: { icon: IoPricetagSharp, value: "Starting USD 55" },
               "Room Size": { icon: IoMdResize, value: "205 sq. ft." },
               "Rate plan": { icon: GiBowlOfRice, value: "Bed & Breakfast" },
-              "Check-in/out": { icon: IoMdClock, value: "1pm - 12 noon" },
+              "Check-in/out": { icon: IoMdClock, value: "2pm - 12 noon" },
             },
           },
         ],
@@ -582,18 +694,27 @@ export const accommodationContents = [
           },
         ],
         roomAmenities: [
-          { icon: FaWifi, title: "Free Wi-Fi" },
-          { icon: FaTv, title: "Flat-screen TV" },
-          { icon: FaBed, title: "Comfortable Bed" },
-          { icon: FaBath, title: "Private Bathroom" },
-          { icon: MdTableRestaurant, title: "Furniture" },
-          { icon: FaUtensils, title: "Dining Area" },
-          { icon: FaAirFreshener, title: "Air Conditioning" },
-          { icon: FaCoffee, title: "Coffee Maker" },
-          { icon: GiSlippers, title: "Slippers" },
+          { icon: TbWifi, title: "Free Wi-Fi" },
+          { icon: FaTv, title: "Television" },
+          { icon: MdOutlineHotel, title: "Comfortable Bed" },
+          { icon: MdOutlineBathtub, title: "Private Bathroom" },
+          { icon: TbDesk, title: "Work Desk" },
+          { icon: MdOutlineRoomService, title: "Room Service" },
+          { icon: TbAirConditioning, title: "Air Conditioner" },
+          { icon: MdOutlineCoffeeMaker, title: "Tea / Coffee Maker" },
+          { icon: TbPaperBag, title: "Sachet" },
+          { icon: PiLockersBold, title: "Wardrobe" },
+          { icon: LiaShoePrintsSolid, title: "Slippers" },
           { icon: TbDeviceLandlinePhone, title: "Telephone" },
-          { icon: GiTowel, title: "Towel Service" },
-          { icon: FaBottleWater, title: "Water Bottle" },
+          { icon: GiTowel, title: "Towel" },
+          { icon: TbToiletPaper, title: "Toiletries" },
+          { icon: IoAlarmOutline, title: "Wake Up Call" },
+          { icon: TbIroning, title: "Iron (on request)" },
+          {
+            icon: hairdryer,
+            title: "Dryer (on request)",
+          },
+          { icon: TbBottle, title: "Water Bottle" },
         ],
       },
       {
@@ -603,8 +724,7 @@ export const accommodationContents = [
           // "Step into the realm of refined luxury with our Executive Room, a sanctuary designed for the discerning. Here, elegance is in every detail, from the tailored services to the panoramic vistas that await. It's an exclusive retreat where comfort meets sophistication, crafted just for you.",
           "A haven of sophistication with panoramic views, where every detail exudes elegance for the discerning traveler.",
         router: "/accommodation#executive-room",
-        booking:
-          "https://www.mithilayatriniwas.com/result.php?hotel_code=gBRaLW",
+        booking: rojai,
         image: [
           {
             src: room2,
@@ -615,11 +735,11 @@ export const accommodationContents = [
           {
             title: "Informations",
             data: {
-              "Total Rooms": { icon: IoBed, value: "10 rooms" },
-              Price: { icon: IoPricetagSharp, value: "Starting USD 50" },
+              "Total Rooms": { icon: IoBed, value: "8 rooms" },
+              Price: { icon: IoPricetagSharp, value: "Starting USD 65" },
               "Room Size": { icon: IoMdResize, value: "215 sq. ft." },
               "Rate plan": { icon: GiBowlOfRice, value: "Bed & Breakfast" },
-              "Check-in/out": { icon: IoMdClock, value: "1pm - 12 noon" },
+              "Check-in/out": { icon: IoMdClock, value: "2pm - 12 noon" },
             },
           },
         ],
@@ -646,18 +766,27 @@ export const accommodationContents = [
           },
         ],
         roomAmenities: [
-          { icon: FaWifi, title: "Free Wi-Fi" },
-          { icon: FaTv, title: "Flat-screen TV" },
-          { icon: FaBed, title: "Comfortable Bed" },
-          { icon: FaBath, title: "Private Bathroom" },
-          { icon: MdTableRestaurant, title: "Furniture" },
-          { icon: FaUtensils, title: "Dining Area" },
-          { icon: FaAirFreshener, title: "Air Conditioning" },
-          { icon: FaCoffee, title: "Coffee Maker" },
-          { icon: GiSlippers, title: "Slippers" },
+          { icon: TbWifi, title: "Free Wi-Fi" },
+          { icon: FaTv, title: "Television" },
+          { icon: MdOutlineHotel, title: "Comfortable Bed" },
+          { icon: MdOutlineBathtub, title: "Private Bathroom" },
+          { icon: TbDesk, title: "Work Desk" },
+          { icon: MdOutlineRoomService, title: "Room Service" },
+          { icon: TbAirConditioning, title: "Air Conditioner" },
+          { icon: MdOutlineCoffeeMaker, title: "Tea / Coffee Maker" },
+          { icon: TbPaperBag, title: "Sachet" },
+          { icon: PiLockersBold, title: "Wardrobe" },
+          { icon: LiaShoePrintsSolid, title: "Slippers" },
           { icon: TbDeviceLandlinePhone, title: "Telephone" },
-          { icon: GiTowel, title: "Towel Service" },
-          { icon: FaBottleWater, title: "Water Bottle" },
+          { icon: GiTowel, title: "Towel" },
+          { icon: TbToiletPaper, title: "Toiletries" },
+          { icon: IoAlarmOutline, title: "Wake Up Call" },
+          { icon: TbIroning, title: "Iron (on request)" },
+          {
+            icon: hairdryer,
+            title: "Dryer (on request)",
+          },
+          { icon: TbBottle, title: "Water Bottle" },
         ],
       },
       {
@@ -667,8 +796,7 @@ export const accommodationContents = [
           // "Discover unparalleled luxury in our Suite Room, a sanctuary of opulence and comfort. Each suite is a masterpiece of design, offering expansive spaces, exquisite furnishings, and breathtaking views. Surrender to the allure of exclusivity and personalized service, where every detail caters to your utmost well-being.",
           "Each suite is a masterpiece of design, offering expansive spaces, exquisite furnishings, and breathtaking views.",
         router: "/accommodation#suite-room",
-        booking:
-          "https://www.mithilayatriniwas.com/result.php?hotel_code=gBRaLW",
+        booking: rojai,
         image: [
           {
             src: room3,
@@ -680,10 +808,10 @@ export const accommodationContents = [
             title: "Informations",
             data: {
               "Total Rooms": { icon: IoBed, value: "2 rooms" },
-              Price: { icon: IoPricetagSharp, value: "Starting USD 60" },
+              Price: { icon: IoPricetagSharp, value: "Starting USD 80" },
               "Room Size": { icon: IoMdResize, value: "215 sq. ft." },
               "Rate plan": { icon: GiBowlOfRice, value: "Bed & Breakfast" },
-              "Check-in/out": { icon: IoMdClock, value: "1pm - 12 noon" },
+              "Check-in/out": { icon: IoMdClock, value: "2pm - 12 noon" },
             },
           },
         ],
@@ -711,18 +839,27 @@ export const accommodationContents = [
           },
         ],
         roomAmenities: [
-          { icon: FaWifi, title: "Free Wi-Fi" },
-          { icon: FaTv, title: "Flat-screen TV" },
-          { icon: FaBed, title: "Comfortable Bed" },
-          { icon: FaBath, title: "Private Bathroom" },
-          { icon: MdTableRestaurant, title: "Furniture" },
-          { icon: FaUtensils, title: "Dining Area" },
-          { icon: FaAirFreshener, title: "Air Conditioning" },
-          { icon: FaCoffee, title: "Coffee Maker" },
-          { icon: GiSlippers, title: "Slippers" },
+          { icon: TbBasket, title: "Fruits Basket" },
+          { icon: TbVip, title: "VIP Amenities" },
+          { icon: TbWifi, title: "Free Wi-Fi" },
+          { icon: FaTv, title: "Television" },
+          { icon: MdOutlineHotel, title: "Comfortable Bed" },
+          { icon: MdOutlineBathtub, title: "Private Bathroom" },
+          { icon: TbDesk, title: "Work Desk" },
+          { icon: MdOutlineRoomService, title: "Room Service" },
+          { icon: TbAirConditioning, title: "Air Conditioner" },
+          { icon: MdOutlineCoffeeMaker, title: "Tea / Coffee Maker" },
+          { icon: PiLockersBold, title: "Wardrobe" },
+          { icon: LiaShoePrintsSolid, title: "Slippers" },
           { icon: TbDeviceLandlinePhone, title: "Telephone" },
-          { icon: GiTowel, title: "Towel Service" },
-          { icon: FaBottleWater, title: "Water Bottle" },
+          { icon: TbToiletPaper, title: "Toiletries" },
+          { icon: IoAlarmOutline, title: "Wake Up Call" },
+          { icon: TbIroning, title: "Iron (on request)" },
+          {
+            icon: hairdryer,
+            title: "Dryer (on request)",
+          },
+          { icon: TbBottle, title: "Water Bottle" },
         ],
       },
     ],
@@ -731,19 +868,19 @@ export const accommodationContents = [
 
 export const locationDetails = [
   {
-    title: "Dasrath Talau, Janakpur Dham, Dhanusha",
+    title: "Maharaj Sagar - 6, Janakpurdham",
     icon: GrLocation,
     url: "https://maps.app.goo.gl/aaeWHF1y7NZuPC7J8",
   },
   {
-    title: "+977-14229996",
+    title: "+977-9820113410",
     icon: TbPhone,
-    url: "tel:+97714229996",
+    url: "tel:+9779820113410",
   },
   {
-    title: "info@hotelmithilanepal.com",
+    title: "fo@mithilayatriniwas.com",
     icon: HiOutlineMail,
-    url: "mailto:info@hotelmithilanepal.com",
+    url: "mailto:fo@mithilayatriniwas.com",
   },
 ];
 
@@ -818,9 +955,9 @@ export const footerMenuItems = [
 ];
 
 export const footerTerms = [
-  { text: "Terms & Conditions", router: "#" },
-  { text: "Privacy Policy", router: "#" },
-  { text: "Child Policy", router: "#" },
+  { text: "Terms & Conditions", router: "/terms-and-conditions" },
+  { text: "Privacy Policy", router: "/privacy-policy" },
+  { text: "Cancellation Policy", router: "/cancellation-policy" },
 ];
 
 export const sister = "Stream Peak International Pvt. Ltd.";
@@ -851,6 +988,12 @@ export const otaLinks = [
       "https://www.expedia.com/Janakpur-Hotels-Mithila-Yatri-Niwas.h83936278.Hotel-Information?",
     imgSrc: expedia,
     alt: "Expedia",
+  },
+  {
+    router:
+      "https://www.makemytrip.com/hotels-international/nepal/janakpur-hotels/mithila_yatri_niwas-details.html",
+    imgSrc: makemytrip,
+    alt: "Make my trip",
   },
 ];
 
@@ -1074,10 +1217,10 @@ export const contactFormFields = [
 
 export const enquiryFormFields = [
   {
-    id: "event",
+    id: "event-venue",
     type: "text",
-    label: "Event Title",
-    icon: TbCalendarEvent,
+    label: "Event Venue",
+    icon: TbCurrentLocation,
   },
   {
     id: "event-date",
@@ -1085,6 +1228,13 @@ export const enquiryFormFields = [
     label: "Event Date",
     icon: TbCalendarEvent,
   },
+  {
+    id: "event-title",
+    type: "text",
+    label: "Event Title",
+    icon: TbCalendarEvent,
+  },
+  { id: "pax", type: "number", label: "No. of pax", icon: TbUsersGroup },
   { id: "name", type: "text", label: "Full Name", icon: FiUser },
   {
     id: "email",
@@ -1093,13 +1243,6 @@ export const enquiryFormFields = [
     icon: MdAlternateEmail,
   },
   { id: "phone", type: "tel", label: "Phone Number", icon: TbPhone },
-  { id: "address", type: "text", label: "Address", icon: GrLocation },
-  {
-    id: "subject",
-    type: "text",
-    label: "Subject",
-    icon: TbPencilQuestion,
-  },
   {
     id: "message",
     type: "textarea",
@@ -1193,8 +1336,15 @@ export const articlePageContents = {
       <!-- Add more paragraphs as needed -->
     </div>
   </section>
-  
-  
+    `,
+  },
+  "cancellation-policy": {
+    html: `
+    <section class="responsive-banner bg-logo-bg">
+    <div class="text-center md:my-8 container space-y-6 mb-16">
+      <h2 class="text-2xl md:text-3xl">Cancellation Policy</h2>
+    </div>
+  </section>
     `,
   },
   "terms-and-conditions": {

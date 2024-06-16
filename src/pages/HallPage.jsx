@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState } from "react";
 import {
   hallContents,
   PackageSlider,
@@ -11,6 +10,12 @@ import {
 
 const HallPage = () => {
   const { title, description, hallCategories } = hallContents[0];
+  const [activeHall, setActiveHall] = useState(hallCategories[0]);
+
+  const handleHallClick = (hallId) => {
+    const selectedHall = hallCategories.find((hall) => hall.id === hallId);
+    setActiveHall(selectedHall);
+  };
 
   return (
     <>
@@ -30,10 +35,14 @@ const HallPage = () => {
           </p>
         </div>
 
-        <PackageList contents={hallCategories} />
+        <PackageList
+          contents={hallCategories}
+          onItemClick={handleHallClick}
+          type="hall"
+        />
 
         <RoomAmenities
-          amenities={hallCategories[0].hallAmenities}
+          amenities={activeHall.hallAmenities}
           amenitiesTitle="Hall Amenities"
         />
 

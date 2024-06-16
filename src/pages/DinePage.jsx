@@ -11,6 +11,12 @@ import { Link } from "react-router-dom";
 
 const DinePage = () => {
   const { title, description, dineCategories } = dineContents[0];
+  const [activeDine, setActiveDine] = React.useState(dineCategories[0]);
+
+  const handleDineClick = (dineId) => {
+    const selectedDine = dineCategories.find((dine) => dine.id === dineId);
+    setActiveDine(selectedDine);
+  };
 
   return (
     <>
@@ -38,10 +44,14 @@ const DinePage = () => {
           </div>
         </div>
 
-        <PackageList contents={dineCategories} />
+        <PackageList
+          contents={dineCategories}
+          onItemClick={handleDineClick}
+          type="dine"
+        />
 
         <RoomAmenities
-          amenities={dineCategories[0].dineAmenities}
+          amenities={activeDine.dineAmenities}
           amenitiesTitle="Dine Amenities"
         />
 

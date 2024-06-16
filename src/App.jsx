@@ -41,7 +41,7 @@ const App = () => {
             <Route path="/enquiry-form" element={<Enquiry />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<NotFound />} />
-            <Route path="/article/:slug" element={<ArticlePage />} />
+            <Route path="/:slug" element={<ArticlePage />} />
           </Routes>
         </Suspense>
         <Footer />

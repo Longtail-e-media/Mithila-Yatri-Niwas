@@ -11,6 +11,12 @@ import {
 
 const AccommodationPage = () => {
   const { title, description, roomsCategories } = accommodationContents[0];
+  const [activeRoom, setActiveRoom] = React.useState(roomsCategories[0]);
+
+  const handleRoomClick = (roomId) => {
+    const selectedRoom = roomsCategories.find((room) => room.id === roomId);
+    setActiveRoom(selectedRoom);
+  };
 
   return (
     <>
@@ -30,10 +36,14 @@ const AccommodationPage = () => {
           </p>
         </div>
 
-        <PackageList contents={roomsCategories} />
+        <PackageList
+          contents={roomsCategories}
+          onItemClick={handleRoomClick}
+          type="accommodation"
+        />
 
         <RoomAmenities
-          amenities={roomsCategories[0].roomAmenities}
+          amenities={activeRoom.roomAmenities}
           amenitiesTitle="Room Amenities"
         />
 

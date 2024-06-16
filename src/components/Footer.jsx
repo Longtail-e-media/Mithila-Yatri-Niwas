@@ -130,6 +130,8 @@ const Footer = () => {
               <Link
                 key={index}
                 to={link.router}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-xs md:text-base relative group text-custom-white hover:text-white underline transition-linear  hover:scale-105"
               >
                 {link.text}

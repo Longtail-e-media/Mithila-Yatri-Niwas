@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ScrollToTopOnNavigate } from "../../constants/data";
 
 const Reservation = () => {
   return (
@@ -19,12 +20,14 @@ const Reservation = () => {
               hesitate to contact us.
             </p>
 
-            <Link
-              to="/contact#contact-form"
-              className="my-12 font-title flex items-center justify-center gap-2 text-custom-white bg-alt-logo-clr hover:bg-logo-clr px-6 py-3 w-32 mx-auto transition-linear group"
-            >
-              Enquiry
-            </Link>
+            <ScrollToTopOnNavigate>
+              <Link
+                to="/contact#contact-form"
+                className="my-12 font-title flex items-center justify-center gap-2 text-custom-white bg-alt-logo-clr hover:bg-logo-clr px-6 py-3 w-32 mx-auto transition-linear group"
+              >
+                Enquiry
+              </Link>
+            </ScrollToTopOnNavigate>
 
             <div className="flex items-center justify-center flex-col gap-2">
               <span className="text-gray-600">
@@ -40,12 +43,12 @@ const Reservation = () => {
               </span>
 
               <Link
-                to="mailto:info@hotelmithilanepal.com"
+                to="mailto:fo@mithilayatriniwas.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-custom-black/90 text-lg font-semibold hover:text-alt-logo-clr transition-linear"
               >
-                info@hotelmithilanepal.com
+                fo@mithilayatriniwas.com
               </Link>
             </div>
           </div>

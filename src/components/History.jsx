@@ -12,31 +12,47 @@ const History = () => {
         <section className="z-10 text-custom-black pt-24 pb-48 md:pt-32 md:pb-96">
           <div className="text-justify sm:text-center mb-12 container max-w-7xl mx-auto space-y-4 text-custom-black">
             <h3 className="text-center text-2xl md:text-3xl mb-6">
-              Cultural Legacy of Mithila
+              Cultural Legacy of Mithila, Janakpur
             </h3>
             <p className="text-base text-gray-600">
-              The Janaki Temple, a revered Hindu sanctuary in Janakpur, Nepal,
-              stands as a testament to the divine Sita. Showcasing a unique
-              blend of Islamic and traditional Nepali architectural styles, it
-              is celebrated as a prime example of Mughal influence in Nepalese
-              design. Known affectionately as the Nau Lakha Mandir, its name
-              reflects the nine hundred thousand rupees spent on its creation by
-              Queen Vrisha Bhanu of Tikamgarh in 1910 AD. Recognized for its
-              cultural significance, the temple was honored as a UNESCO
-              tentative site in 2008.
+              The Janaki Temple in Janakpur, Nepal, dedicated to goddess Sita
+              from the Ramayana, intertwines its history with her legendary
+              tale. Commissioned by Queen Vrisha Bhanu in 1910, the temple
+              features a blend of Mughal and Koiri architecture with intricate
+              designs and vibrant depictions of Ramayana scenes. It serves as a
+              cultural hub attracting thousands during festivals like Vivah
+              Panchami and Ram Navami. The temple stands as a testament to
+              enduring devotion, embodying Sita and Rama's timeless love story
+              and inspiring reverence across generations.
             </p>
             <p className="text-base text-gray-600">
-              As a pivotal Hindu pilgrimage destination, the Janaki Temple draws
-              countless devotees from India and around the globe, especially
-              during the auspicious occasions of Ram Nawami, Vivaha Panchami,
-              Dashain, and Tihar. Its grandeur is magnified manifold during
-              these festivals.
+              Janakpur, is renowned for its vibrant Mithila art, stemming from
+              King Janak's commission for paintings depicting Sita's wedding to
+              Lord Rama. Predominantly practiced by women, this art form serves
+              as a visual narrative for cultural events, featuring intricate
+              designs and bold colors. Widely recognized in the 20th century,
+              Mithila art now enjoys global acclaim, with Janakpur as its hub
+              and initiatives like the Janakpur Women's Development Center
+              preserving its legacy, showcasing the resilience and creativity of
+              the Maithil people.
             </p>
             <p className="text-base text-gray-600">
-              Nestled near this architectural marvel and the serene lakeside,
-              the Hotel Mithila emerges as a three-star abode infused with
-              spiritual themes, promising unparalleled hospitality and a
-              transformative experience for all who visit.
+              Near Janaki Mandir in Janakpur, several holy sites like Ram
+              Mandir, Janaki Kund, Mani Mandap, Ganga Sagar, and Dhanushadham
+              hold deep significance in Hindu culture. These sites are dedicated
+              to Lord Rama, Goddess Sita, and King Janak offering spiritual
+              purification and a glimpse into Janakpur's royal heritage. Each
+              location resonates with the echoes of the Ramayana, drawing
+              pilgrims and visitors to experience the profound spirituality and
+              cultural richness of Janakpur.
+            </p>
+            <p className="text-base text-gray-600">
+              Experience Janakpur's cultural and spiritual charm at Mithila
+              Yatrai Nawas, centrally located in this historic city. Explore the
+              iconic Janaki Temple and immerse yourself in the rich heritage of
+              Mithila art. Embark on a spiritual quest to nearby holy sites like
+              Ram Mandir and Janaki Kund, ensuring a memorable stay with
+              comfortable accommodation and warm hospitality.
             </p>
           </div>
         </section>

@@ -56,10 +56,14 @@ const Dine = () => {
                     {child.informations.map((infoCategory, index) => (
                       <li
                         key={index}
-                        className="flex items-center justify-between mt-6 py-2"
+                        className="grid grid-cols-2 gap-4 mt-6 py-2 text-gray-700"
                       >
                         {Object.entries(infoCategory.data).map(
                           ([infoKey, infoValue]) => (
+                            // <span
+                            //   className="flex items-center md:gap-1 text-xs md:text-base"
+                            //   key={infoKey}
+                            // >
                             <span
                               className="flex items-center md:gap-1 text-xs md:text-base"
                               key={infoKey}
@@ -70,7 +74,7 @@ const Dine = () => {
                                 <img
                                   src={infoValue.icon}
                                   alt={infoKey}
-                                  className="w-8 h-8 mr-2 p-1"
+                                  className="w-6 h-6 mr-2 p-1"
                                 />
                               )}
                               {/* <span className="font-bold">{infoKey}: </span> */}

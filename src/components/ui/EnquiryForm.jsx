@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "../../hooks/useForm";
 import { ReCaptcha, Toast, FormButton } from "../../constants/data";
+import { useLocation } from "react-router-dom";
 
 const EnquiryForm = ({ enquiryFormFields }) => {
+  const location = useLocation();
+  const { venue } = location.state || {};
+  
   const initialState = enquiryFormFields.reduce((acc, field) => {
-    acc[field.id] = "";
+    acc[field.id] = field.id === "event-venue" && venue ? venue : "";
     return acc;
   }, {});
 
@@ -30,7 +34,7 @@ const EnquiryForm = ({ enquiryFormFields }) => {
     const today = new Date();
     const yyyy = today.getFullYear();
     const mm = String(today.getMonth() + 1).padStart(2, "0"); // Months are zero-indexed
-    const dd = String(today.getDate()).padStart(1, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
 
     return `${yyyy}-${mm}-${dd}`;
   };

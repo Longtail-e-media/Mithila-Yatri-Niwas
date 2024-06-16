@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 // import bgVideo from "https://www.mithilayatriniwas.com/template/cms/images/video.mp4";
 import { mithilaNight } from "../constants/data";
+import { mithilaVideo } from "../constants/data";
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -24,10 +25,7 @@ const Hero = () => {
         poster={mithilaNight}
         onClick={startVideo}
       >
-        <source
-          src="https://www.mithilayatriniwas.com/template/cms/images/video.mp4"
-          type="video/mp4"
-        />
+        <source src={mithilaVideo} type="video/mp4" />
         <track
           src="#"
           kind="captions"

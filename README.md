@@ -5,8 +5,8 @@
 ## Contact
 
 - **Address**: [Dasrath Talau, Janakpur Dham, Dhanusha](https://maps.app.goo.gl/TzyiHa84DdBrZab39)
-- **Phone**: [+977-14229996](tel:+97714229996)
-- **Email**: [info@hotelmithilanepal.com](mailto:info@hotelmithilanepal.com)
+- **Phone**: [+977-9820113410](tel:+9779820113410)
+- **Email**: [fo@mithilayatriniwas.com](mailto:fo@mithilayatriniwas.com)
 
 ## About Us
 

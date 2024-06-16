@@ -5,10 +5,15 @@ import {
   AboutGallery,
   LearnMore,
   namaste,
+  rojai,
 } from "../constants/data";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const { text, galleryImages } = aboutContents;
+
+  const { heading, paragraph, subheading, book } = text;
+
   return (
     <>
       <section className="bg-logo-bg overflow-hidden">
@@ -26,11 +31,22 @@ const About = () => {
           />
           <div className="space-y-6 text-center text-custom-black">
             <h2 className="w-full md:px-32 mx-auto text-lg md:text-[2.25rem] leading-snug">
-              {text.heading}
+              {heading}
             </h2>
             <p className="w-full md:w-11/12 mx-auto text-sm md:text-lg text-justify md:text-center text-custom-black/80">
-              {text.paragraph}
+              {paragraph}
             </p>
+
+            <h3 className="capitalize text-base sm:text-base md:text-xl font-bold tracking-wider [word-spacing:3px]">
+              {subheading}
+              <Link
+                to={rojai}
+                target="_blank"
+                className="underline underline-offset-4 hover:underline-offset-2 font-title text-logo-clr hover:underline duration-300 transition-linear"
+              >
+                {book}
+              </Link>
+            </h3>
           </div>
 
           <div className="mt-16">
