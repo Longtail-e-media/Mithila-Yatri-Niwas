@@ -1,13 +1,12 @@
 import React from "react";
 
 import {
-  testimonialsContent,
   SvgWave,
-  LearnMore,
   TestimonialsSlider,
+  withDataFetching,
 } from "../constants/data";
 
-const Testimonials = () => {
+const Testimonials = ({ data: testimonialsContent }) => {
   return (
     <>
       {/* <section className="bg-gradient-to-b from-logo-bg to-alt-bg px-10"> */}
@@ -41,4 +40,15 @@ const Testimonials = () => {
   );
 };
 
-export default Testimonials;
+const transformTestimonialsContent = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return testimonialsContent;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_testimonial.php",
+  transformTestimonialsContent
+)(Testimonials);

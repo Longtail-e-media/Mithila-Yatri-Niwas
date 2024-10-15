@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  accommodationContents,
+  withDataFetching,
   PackageSlider,
   BreadCrumb,
   RoomAmenities,
@@ -9,7 +9,7 @@ import {
   PackageList,
 } from "../constants/data";
 
-const AccommodationPage = () => {
+const AccommodationPage = ({ data: accommodationContents }) => {
   const { title, description, roomsCategories } = accommodationContents[0];
   const [activeRoom, setActiveRoom] = React.useState(roomsCategories[0]);
 
@@ -53,4 +53,15 @@ const AccommodationPage = () => {
   );
 };
 
-export default AccommodationPage;
+const transformAccommodationContents = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return accommodationContents;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_room.php",
+  transformAccommodationContents
+)(AccommodationPage);

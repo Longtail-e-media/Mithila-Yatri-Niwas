@@ -1,6 +1,10 @@
 import logo from "../assets/logo.svg";
 import mithilaVideo from "../assets/mithila.mp4";
 
+// hoc
+import withDataFetching from "../hoc/withDataFetching";
+export { withDataFetching };
+
 import SvgWave from "../components/ui/SvgWave";
 import AboutGallery from "../components/ui/AboutGallery";
 import LearnMore from "../components/ui/LearnMore";
@@ -21,6 +25,7 @@ import RoomSlider from "../components/ui/RoomSlider";
 import FormButton from "../components/ui/FormButton";
 import ReCaptcha from "../components/ui/ReCaptcha";
 import Toast from "../components/ui/Toast";
+import Loading from "../components/Loading";
 
 import Direction from "../components/Direction";
 import Hero from "../components/Hero";
@@ -85,6 +90,7 @@ export {
   Hero,
   History,
   LearnMore,
+  Loading,
   LocationDetails,
   MithilaThali,
   OffersSlider,
@@ -694,27 +700,27 @@ export const accommodationContents = [
           },
         ],
         roomAmenities: [
-          { icon: TbWifi, title: "Free Wi-Fi" },
-          { icon: FaTv, title: "Television" },
-          { icon: MdOutlineHotel, title: "Comfortable Bed" },
-          { icon: MdOutlineBathtub, title: "Private Bathroom" },
-          { icon: TbDesk, title: "Work Desk" },
-          { icon: MdOutlineRoomService, title: "Room Service" },
-          { icon: TbAirConditioning, title: "Air Conditioner" },
-          { icon: MdOutlineCoffeeMaker, title: "Tea / Coffee Maker" },
-          { icon: TbPaperBag, title: "Sachet" },
-          { icon: PiLockersBold, title: "Wardrobe" },
-          { icon: LiaShoePrintsSolid, title: "Slippers" },
-          { icon: TbDeviceLandlinePhone, title: "Telephone" },
-          { icon: GiTowel, title: "Towel" },
-          { icon: TbToiletPaper, title: "Toiletries" },
-          { icon: IoAlarmOutline, title: "Wake Up Call" },
-          { icon: TbIroning, title: "Iron (on request)" },
+          { icon: "TbWifi", title: "Free Wi-Fi" },
+          { icon: "FaTv", title: "Television" },
+          { icon: "MdOutlineHotel", title: "Comfortable Bed" },
+          { icon: "MdOutlineBathtub", title: "Private Bathroom" },
+          { icon: "TbDesk", title: "Work Desk" },
+          { icon: "MdOutlineRoomService", title: "Room Service" },
+          { icon: "TbAirConditioning", title: "Air Conditioner" },
+          { icon: "MdOutlineCoffeeMaker", title: "Tea / Coffee Maker" },
+          { icon: "TbPaperBag", title: "Sachet" },
+          { icon: "PiLockersBold", title: "Wardrobe" },
+          { icon: "LiaShoePrintsSolid", title: "Slippers" },
+          { icon: "TbDeviceLandlinePhone", title: "Telephone" },
+          { icon: "GiTowel", title: "Towel" },
+          { icon: "TbToiletPaper", title: "Toiletries" },
+          { icon: "IoAlarmOutline", title: "Wake Up Call" },
+          { icon: "TbIroning", title: "Iron (on request)" },
           {
-            icon: hairdryer,
+            icon: "https://himalayanflavours.pages.dev/assets/fire-Ch4bH2kY.png",
             title: "Dryer (on request)",
           },
-          { icon: TbBottle, title: "Water Bottle" },
+          { icon: "TbBottle", title: "Water Bottle" },
         ],
       },
       {

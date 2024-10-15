@@ -6,10 +6,11 @@ import {
   RoomAmenities,
   Reservation,
   PackageList,
+  withDataFetching,
 } from "../constants/data";
 import { Link } from "react-router-dom";
 
-const DinePage = () => {
+const DinePage = ({ data: dineContents }) => {
   const { title, description, dineCategories } = dineContents[0];
   const [activeDine, setActiveDine] = React.useState(dineCategories[0]);
 
@@ -61,4 +62,15 @@ const DinePage = () => {
   );
 };
 
-export default DinePage;
+const transformDineContents = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return dineContents;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_dine.php",
+  transformDineContents
+)(DinePage);

@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
-import { nearbyLocations } from "../../constants/data";
 
-const NearbyMapComponent = () => {
+import React, { useState, useRef } from "react";
+import { withDataFetching } from "../../constants/data";
+
+const NearbyMapComponent = ({ data: nearbyLocations }) => {
   const [isMapOpen, setIsMapOpen] = useState(true);
   const [mapUrl, setMapUrl] = useState(nearbyLocations[0]?.map || "");
   const [selectedLocation, setSelectedLocation] = useState(
@@ -25,12 +26,6 @@ const NearbyMapComponent = () => {
     setSelectedLocation(location);
     openMapModal(location.map, location);
   };
-
-  useEffect(() => {
-    if (selectedLocation) {
-      setMapUrl(selectedLocation.map);
-    }
-  }, [selectedLocation]);
 
   const totalLocations = nearbyLocations.length;
   const halfLocations = Math.ceil(totalLocations / 2);
@@ -110,4 +105,19 @@ const NearbyMapComponent = () => {
   );
 };
 
-export default NearbyMapComponent;
+// const transformNearbyData = (data) => {
+//   return JSON.parse(data);
+// };
+
+const transformNearbyData = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return nearbyLocations;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_nearby.php",
+  transformNearbyData
+)(NearbyMapComponent);

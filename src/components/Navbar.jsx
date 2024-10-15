@@ -3,7 +3,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
 import { Link, NavLink } from "react-router-dom";
 import {
-  navLinks,
+  withDataFetching,
   logo,
   Button,
   LocationDetails,
@@ -11,7 +11,7 @@ import {
   ScrollToTopOnNavigate,
 } from "../constants/data";
 
-const Navbar = () => {
+const Navbar = ({ data: navLinks }) => {
   const [openDropdownId, setOpenDropdownId] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(true);
 
@@ -90,7 +90,7 @@ const Navbar = () => {
                     <NavLink
                       to={link.link}
                       className={({ isActive }) =>
-                        `font-title inline-block transition-linear drop-shadow-lg hover:scale-110 px-3 py-1 rounded-full ${
+                        `capitalize font-title inline-flex transition-linear drop-shadow-lg hover:scale-110 px-3 py-1 rounded-full ${
                           isActive ? "bg-custom-black/40" : ""
                         }`
                       }
@@ -106,7 +106,7 @@ const Navbar = () => {
                             <NavLink
                               to={subLink.link}
                               className={({ isActive }) =>
-                                `font-title inline-block hover:bg-custom-black/50 text-sm w-full h-full px-4 py-3 transition-linear drop-shadow-lg hover:scale-110 border-t border-b border-custom-white/50 ${
+                                `capitalize font-title inline-block hover:bg-custom-black/50 text-sm w-full h-full px-4 py-3 transition-linear drop-shadow-lg hover:scale-110 border-t border-b border-custom-white/50 ${
                                   isActive ? "bg-custom-black/40" : ""
                                 }`
                               }
@@ -123,7 +123,7 @@ const Navbar = () => {
                     <NavLink
                       to={link.link}
                       className={({ isActive }) =>
-                        `font-title inline-block transition-linear drop-shadow-lg hover:scale-110 px-3 py-1 rounded-full ${
+                        `capitalize font-title inline-block transition-linear drop-shadow-lg hover:scale-110 px-3 py-1 rounded-full ${
                           isActive ? "bg-custom-black/40" : ""
                         }`
                       }
@@ -171,4 +171,15 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+const transformNavLinks = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return navLinks;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_menu.php",
+  transformNavLinks
+)(Navbar);
