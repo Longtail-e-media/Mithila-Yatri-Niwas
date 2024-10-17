@@ -278,17 +278,17 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    icon: TbBrandFacebook,
+    icon: "TbBrandFacebook",
     title: "Facebook",
     url: "https://www.facebook.com/MithilaYatriNiwas",
   },
   {
-    icon: FaInstagram,
+    icon: "FaInstagram",
     title: "Instagram",
     url: "https://instagram.com/mithilayatriniwas?igshid=MzRlODBiNWFlZA==",
   },
   {
-    icon: TbPhone,
+    icon: "TbPhone",
     title: "Number",
     url: "tel:+9779820113410",
   },
@@ -875,17 +875,17 @@ export const accommodationContents = [
 export const locationDetails = [
   {
     title: "Maharaj Sagar - 6, Janakpurdham",
-    icon: GrLocation,
+    icon: "GrLocation",
     url: "https://maps.app.goo.gl/aaeWHF1y7NZuPC7J8",
   },
   {
     title: "+977-9820113410",
-    icon: TbPhone,
+    icon: "TbPhone",
     url: "tel:+9779820113410",
   },
   {
     title: "fo@mithilayatriniwas.com",
-    icon: HiOutlineMail,
+    icon: "HiOutlineMail",
     url: "mailto:fo@mithilayatriniwas.com",
   },
 ];
@@ -944,20 +944,24 @@ export const nearbyLocations = [
 ];
 
 export const footerMenuItems = [
-  { icon: MdOutlineBed, text: "Deluxe", router: "/accommodation#deluxe-room" },
   {
-    icon: MdOutlineBed,
+    icon: "MdOutlineBed",
+    text: "Deluxe",
+    router: "/accommodation#deluxe-room",
+  },
+  {
+    icon: "MdOutlineBed",
     text: "Executive",
     router: "/accommodation#executive-room",
   },
-  { icon: MdOutlineBed, text: "Suite", router: "/accommodation#suite-room" },
+  { icon: "MdOutlineBed", text: "Suite", router: "/accommodation#suite-room" },
   {
-    icon: MdOutlineBrunchDining,
+    icon: "MdOutlineBrunchDining",
     text: "Bhojan Griha",
     router: "/dine#bhojan-griha",
   },
-  { icon: TbCalendarEvent, text: "Sabha Hall", router: "/hall#sabha-hall" },
-  { icon: TbCalendarEvent, text: "PDR", router: "/hall#pdr-hall" },
+  { icon: "TbCalendarEvent", text: "Sabha Hall", router: "/hall#sabha-hall" },
+  { icon: "TbCalendarEvent", text: "PDR", router: "/hall#pdr-hall" },
 ];
 
 export const footerTerms = [
@@ -1366,4 +1370,69 @@ export const articlePageContents = {
   </section>
     `,
   },
+};
+
+export const footerContents = {
+  footerMenuItems: [
+    {
+      icon: "MdOutlineBed",
+      text: "Deluxe",
+      router: "/accommodation#deluxe-room",
+    },
+    {
+      icon: "MdOutlineBed",
+      text: "Executive",
+      router: "/accommodation#executive-room",
+    },
+    {
+      icon: "MdOutlineBed",
+      text: "Suite",
+      router: "/accommodation#suite-room",
+    },
+    {
+      icon: "MdOutlineBrunchDining",
+      text: "Bhojan Griha",
+      router: "/dine#bhojan-griha",
+    },
+    {
+      icon: "TbCalendarEvent",
+      text: "Sabha Hall",
+      router: "/hall#sabha-hall",
+    },
+    {
+      icon: "TbCalendarEvent",
+      text: "PDR",
+      router: "/hall#pdr-hall",
+    },
+  ],
+  footerTerms: [
+    { text: "Terms & Conditions", router: "/terms-and-conditions" },
+    { text: "Privacy Policy", router: "/privacy-policy" },
+    { text: "Cancellation Policy", router: "/cancellation-policy" },
+  ],
+  logo: logo,
+  owner: "Mithila Yatri Niwas",
+  sister: "Stream Peak International Pvt. Ltd.",
+  sisterUrl: "https://streampeak.com.sg/",
+  author: "Longtail e-media",
+  currentYear: 2024,
+  otaLinks: [
+    {
+      router: "https://www.booking.com",
+      imgSrc: bookingcom,
+      alt: "Booking.com",
+    },
+    {
+      router: "https://www.tripadvisor.com",
+      imgSrc: tripadvisor,
+      alt: "Tripadvisor",
+    },
+    { router: "https://www.agoda.com", imgSrc: agoda, alt: "Agoda" },
+    { router: "https://www.expedia.com", imgSrc: expedia, alt: "Expedia" },
+    {
+      router: "https://www.makemytrip.com",
+      imgSrc: makemytrip,
+      alt: "Make my trip",
+    },
+  ],
 };

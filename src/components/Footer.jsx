@@ -1,16 +1,19 @@
 import React from "react";
-import {
-  footerMenuItems,
+import { LocationDetails, Socials, footerContents } from "../constants/data";
+import { Link } from "react-router-dom";
+import IconRenderer from "./ui/IconRenderer";
+
+const {
   logo,
-  LocationDetails,
-  Socials,
-  otaLinks,
+  footerMenuItems,
   footerTerms,
   sister,
+  sisterUrl,
   author,
+  owner,
   currentYear,
-} from "../constants/data";
-import { Link } from "react-router-dom";
+  otaLinks,
+} = footerContents;
 
 const Footer = () => {
   return (
@@ -60,7 +63,7 @@ const Footer = () => {
                       to={item.router}
                       className="text-xs md:text-sm lg:text-base relative group text-custom-white hover:text-white hover:scale-110 transition-linear flex items-center gap-2"
                     >
-                      {typeof item.icon === "function" ? (
+                      {/* {typeof item.icon === "function" ? (
                         <item.icon className="text-sm md:text-sm lg:text-base lg:mr-1" />
                       ) : (
                         <img
@@ -68,7 +71,11 @@ const Footer = () => {
                           alt={item.text}
                           className="w-12 h-12 mb-2"
                         />
-                      )}
+                      )} */}
+                      <IconRenderer
+                        iconName={item.icon}
+                        className="text-sm md:text-sm lg:text-base lg:mr-1"
+                      />
 
                       {item.text}
                     </Link>
@@ -82,7 +89,11 @@ const Footer = () => {
                       to={item.router}
                       className="text-xs md:text-sm lg:text-base relative group text-custom-white hover:text-white hover:scale-110 transition-linear flex items-center gap-2"
                     >
-                      <item.icon className="text-sm md:text-sm lg:text-base lg:mr-1" />
+                      {/* <item.icon className="text-sm md:text-sm lg:text-base lg:mr-1" /> */}
+                      <IconRenderer
+                        iconName={item.icon}
+                        className="text-sm md:text-sm lg:text-base lg:mr-1"
+                      />
                       {item.text}
                     </Link>
                   </li>
@@ -95,7 +106,11 @@ const Footer = () => {
                       to={item.router}
                       className="text-xs md:text-sm lg:text-base relative group text-custom-white hover:text-white hover:scale-110 transition-linear flex items-center gap-2"
                     >
-                      <item.icon className="text-sm md:text-sm lg:text-base lg:mr-1" />
+                      {/* <item.icon className="text-sm md:text-sm lg:text-base lg:mr-1" /> */}
+                      <IconRenderer
+                        iconName={item.icon}
+                        className="text-sm md:text-sm lg:text-base lg:mr-1"
+                      />
                       {item.text}
                     </Link>
                   </li>
@@ -146,7 +161,7 @@ const Footer = () => {
             <p className="text-sm md:text-base">
               Our Affiliations / Sister concerns: &nbsp;
               <Link
-                to="https://streampeak.com.sg/"
+                to={sisterUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold"
@@ -158,7 +173,7 @@ const Footer = () => {
 
           <div className="flex items-center justify-center flex-col md:flex-row md:justify-between gap-2 text-sm md:text-base">
             <span>
-              &copy; {currentYear} Mithila Yatri Niwas | All Rights Reserved{" "}
+              &copy; {currentYear} {owner} | All Rights Reserved{" "}
             </span>
             <span>
               Website by: &nbsp;

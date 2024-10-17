@@ -1,5 +1,5 @@
 import React from "react";
-import { Slider } from "../../constants/library";
+import { Slider } from "../../constants/library"; // Assuming you're using a slider library like "react-slick"
 
 const PackageSlider = ({ contents, sizeClassName }) => {
   const settings = {
@@ -21,37 +21,33 @@ const PackageSlider = ({ contents, sizeClassName }) => {
     ],
   };
 
-  if (contents.length === 1) {
-    const { id, title, image } = contents[0];
+  // Assuming you always pass contents array with at least 1 item
+  const { image } = contents[0];
+
+  // If there's only 1 image, don't use the slider, just display the single image
+  if (image.length === 1) {
+    const { src, alt } = image[0];
     return (
-      <Slider {...settings}>
-        {image.map(({ src, alt }, index) => (
-          <div key={index} className={`overflow-hidden group ${sizeClassName}`}>
-            <img
-              src={src}
-              alt={alt}
-              className={`${sizeClassName} transition duration-700 ease-in-out transform group-hover:scale-105 object-cover flex-shrink-0`}
-            />
-          </div>
-        ))}
-      </Slider>
+      <div className={`overflow-hidden group ${sizeClassName}`}>
+        <img
+          src={src}
+          alt={alt}
+          className={`${sizeClassName} transition duration-700 ease-in-out transform group-hover:scale-105 object-cover flex-shrink-0`}
+        />
+      </div>
     );
   }
 
+  // For multiple images, use the slider
   return (
     <Slider {...settings}>
-      {contents.map(({ id, title, image }) => (
-        <div key={id} className={`overflow-hidden group ${sizeClassName}`}>
-          <div className={`flex gap-20`}>
-            {image.map(({ src, alt }, index) => (
-              <img
-                key={index}
-                src={src}
-                alt={alt}
-                className={`${sizeClassName} transition duration-700 ease-in-out transform group-hover:scale-105 object-cover flex-shrink-0`}
-              />
-            ))}
-          </div>
+      {image.map(({ src, alt }, index) => (
+        <div key={index} className={`overflow-hidden group ${sizeClassName}`}>
+          <img
+            src={src}
+            alt={alt}
+            className={`${sizeClassName} transition duration-700 ease-in-out transform group-hover:scale-105 object-cover flex-shrink-0`}
+          />
         </div>
       ))}
     </Slider>
