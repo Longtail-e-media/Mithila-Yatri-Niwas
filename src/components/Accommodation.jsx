@@ -1,11 +1,12 @@
 import React from "react";
-import { accommodationContents } from "../constants/data";
+import { withDataFetching } from "../constants/data";
 import PackageHome from "./ui/PackageHome";
 
-const Accommodation = () => {
+const Accommodation = ({ data: accommodationContents }) => {
   const { title, description, roomsCategories } = accommodationContents[0];
-
   const roomAmenities = roomsCategories[0].roomAmenities;
+
+  console.log(title, description, roomsCategories);
 
   return (
     <PackageHome
@@ -21,4 +22,15 @@ const Accommodation = () => {
   );
 };
 
-export default Accommodation;
+const transformAccommodationContents = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return accommodationContents;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_room.php",
+  transformAccommodationContents
+)(Accommodation);

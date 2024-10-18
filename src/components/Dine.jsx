@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  dineContents,
+  withDataFetching,
   mithila,
   SvgWave,
   Button,
@@ -10,8 +10,9 @@ import {
   MithilaThali,
 } from "../constants/data";
 import { Link } from "react-router-dom";
+import IconRenderer from "./ui/IconRenderer";
 
-const Dine = () => {
+const Dine = ({ data: dineContents }) => {
   return (
     <>
       <section className="bg-logo-bg md:px-10 pb-8">
@@ -41,7 +42,7 @@ const Dine = () => {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:translate-x-8 lg:px-8"
               >
                 <img
-                  src={mithila}
+                  src={child.image[0].src}
                   alt="Mithila Yatri Niwas"
                   className="w-full h-64 md:h-96 lg:h-[28rem] object-cover rounded-xl shadow-md"
                 />
@@ -68,7 +69,7 @@ const Dine = () => {
                               className="flex items-center md:gap-1 text-xs md:text-base"
                               key={infoKey}
                             >
-                              {typeof infoValue.icon === "function" ? (
+                              {/* {typeof infoValue.icon === "function" ? (
                                 <infoValue.icon className="text-sm md:text-xl mr-2" />
                               ) : (
                                 <img
@@ -76,7 +77,8 @@ const Dine = () => {
                                   alt={infoKey}
                                   className="w-6 h-6 mr-2 p-1"
                                 />
-                              )}
+                              )} */}
+                              <IconRenderer iconName={infoValue.icon} className="text-sm md:text-xl mr-2" />
                               {/* <span className="font-bold">{infoKey}: </span> */}
                               {infoValue.value}
                             </span>
@@ -114,4 +116,15 @@ const Dine = () => {
   );
 };
 
-export default Dine;
+const transformDineContents = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return dineContents;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_dine.php",
+  transformDineContents
+)(Dine);

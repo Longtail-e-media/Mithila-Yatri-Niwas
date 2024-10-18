@@ -1,21 +1,22 @@
 import React from "react";
-import { LocationDetails, Socials, footerContents } from "../constants/data";
+import { withDataFetching, LocationDetails, Socials } from "../constants/data";
 import { Link } from "react-router-dom";
 import IconRenderer from "./ui/IconRenderer";
+import Logo from "./ui/Logo";
 
-const {
-  logo,
-  footerMenuItems,
-  footerTerms,
-  sister,
-  sisterUrl,
-  author,
-  owner,
-  currentYear,
-  otaLinks,
-} = footerContents;
+const Footer = ({ data: footerContents }) => {
+  const {
+    // logo,
+    footerMenuItems,
+    footerTerms,
+    sister,
+    sisterUrl,
+    author,
+    owner,
+    currentYear,
+    otaLinks,
+  } = footerContents;
 
-const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-alt-logo-clr z-10 px-4">
       {/* <img
@@ -27,11 +28,11 @@ const Footer = () => {
 
       {/* <div className="text-white relative overflow-hidden backdrop-blur-sm z-30"> */}
       {/* <div className="absolute inset-0 size-full bg-[url('https://as2.ftcdn.net/v2/jpg/03/75/84/95/1000_F_375849552_wcE7DBipdqataw3aNPUDRdUSmW3kI6p5.jpg')] bg-contain bg-repeat mix-blend-darken opacity-80 -z-20" /> */}
-      {/* <div className="bg-fixed absolute inset-0 size-full bg-[url('/src/assets/graphics/flowers.webp')] bg-contain bg-repeat mix-blend-multiply opacity-10 -z-20" /> */}
+      <div className="bg-fixed absolute inset-0 size-full bg-[url('/src/assets/graphics/flowers.webp')] bg-contain bg-repeat mix-blend-multiply opacity-10 -z-20" />
 
-      <div
+      {/* <div
         className={`absolute inset-0 h-full w-full bg-[url('/src/assets/graphics/pattern-mandala.avif')] bg-repeat -z-20 mix-blend-multiply opacity-40`}
-      />
+      /> */}
 
       <div className="text-white relative overflow-hidden z-30">
         <div className="container pt-20 pb-8">
@@ -41,17 +42,7 @@ const Footer = () => {
             </div>
 
             <div className="col-span-3 md:col-span-1 flex items-center justify-center flex-col gap-10 order-1 md:order-2">
-              <Link to="/">
-                <img
-                  src={logo}
-                  alt="Mithila Yatri Niwas"
-                  className="w-full h-32 lg:h-48 md:p-1 object-contain rounded-xl"
-                  style={{
-                    filter:
-                      "brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(38%) hue-rotate(254deg) brightness(110%) contrast(110%)",
-                  }}
-                />
-              </Link>
+              <Logo styles="filter-white w-full h-32 lg:h-48 md:p-1 object-contain rounded-xl" />
               <Socials />
             </div>
 
@@ -192,4 +183,15 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+const transformFooterContents = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return footerContents;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_footer.php",
+  transformFooterContents
+)(Footer);

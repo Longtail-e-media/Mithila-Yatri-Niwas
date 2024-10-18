@@ -1,14 +1,8 @@
 import React from "react";
-// import { logo } from "../constants/data";
 
 const Loading = () => {
   return (
     <section className="responsive-banner flex items-center justify-center h-screen bg-black bg-opacity-10 flex-col relative">
-      {/* <img
-        src={logo}
-        alt="Mithila Yatri Niwas"
-        className="absolute left-1/2 -translate-x-1/2 w-[50vw] h-[50vh] object-contain opacity-20"
-      /> */}
       <div className="size-16 rounded-full border-white border-t-4 border-t-logo-clr animate-spin" />
     </section>
   );

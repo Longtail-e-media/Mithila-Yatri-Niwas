@@ -1,8 +1,8 @@
 import React from "react";
-import { hallContents } from "../constants/data";
+import { withDataFetching } from "../constants/data";
 import PackageHome from "./ui/PackageHome";
 
-const Hall = () => {
+const Hall = ({ data: hallContents }) => {
   const { title, description, hallCategories } = hallContents[0];
 
   const hallAmenities = hallCategories[0].hallAmenities;
@@ -21,4 +21,15 @@ const Hall = () => {
   );
 };
 
-export default Hall;
+const transformHallContents = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return hallContents;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_occasions.php",
+  transformHallContents
+)(Hall);

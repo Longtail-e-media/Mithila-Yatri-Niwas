@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  hallContents,
+  withDataFetching,
   PackageSlider,
   BreadCrumb,
   RoomAmenities,
@@ -8,7 +8,7 @@ import {
   PackageList,
 } from "../constants/data";
 
-const HallPage = () => {
+const HallPage = ({ data: hallContents }) => {
   const { title, description, hallCategories } = hallContents[0];
   const [activeHall, setActiveHall] = useState(hallCategories[0]);
 
@@ -52,4 +52,15 @@ const HallPage = () => {
   );
 };
 
-export default HallPage;
+const transformHallContents = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return hallContents;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_occasions.php",
+  transformHallContents
+)(HallPage);

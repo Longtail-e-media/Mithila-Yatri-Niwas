@@ -2,10 +2,10 @@ import React from "react";
 import {
   SvgWave,
   PlacesToVisitSlider,
-  placesToVistContents,
+  withDataFetching,
 } from "../constants/data";
 
-const PlacesToVisit = () => {
+const PlacesToVisit = ({ data: placesToVistContents }) => {
   return (
     <>
       {/* <section className="bg-gradient-to-b from-logo-bg to-alt-bg px-10"> */}
@@ -19,7 +19,7 @@ const PlacesToVisit = () => {
           <p className="text-base text-gray-600 mt-4">
             Discover the charm of proximity with Nearby Location, your gateway
             to local treasures. Uncover hidden gems and popular spots, all just
-            a stone’s throw away. It’s your personal compass for adventure,
+            a stone's throw away. It's your personal compass for adventure,
             leisure, and everything in between.
           </p>
           {/* <LearnMore
@@ -39,4 +39,15 @@ const PlacesToVisit = () => {
   );
 };
 
-export default PlacesToVisit;
+const transformPlacesToVistContents = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return placesToVistContents;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_placestovisit.php",
+  transformPlacesToVistContents
+)(PlacesToVisit);

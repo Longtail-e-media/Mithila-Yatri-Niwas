@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, SvgWave, RoomSlider } from "../../constants/data";
+import IconRenderer from "./IconRenderer";
 
 const PackageHome = ({
   title,
@@ -34,7 +35,7 @@ const PackageHome = ({
                       key={title}
                       className="flex items-center gap-4 text-gray-600 capitalize"
                     >
-                      {typeof Icon === "function" ? (
+                      {/* {typeof Icon === "function" ? (
                         <Icon className="text-xl mr-2" />
                       ) : (
                         <img
@@ -42,7 +43,8 @@ const PackageHome = ({
                           alt={title}
                           className="w-8 h-8 mr-2 p-1"
                         />
-                      )}
+                      )} */}
+                      <IconRenderer iconName={Icon} className="text-xl mr-2" />
                       {title}
                     </li>
                   ))}

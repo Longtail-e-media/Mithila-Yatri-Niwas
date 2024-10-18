@@ -4,12 +4,12 @@ import { IoIosMenu, IoMdClose } from "react-icons/io";
 import { Link, NavLink } from "react-router-dom";
 import {
   withDataFetching,
-  logo,
   Button,
   LocationDetails,
   Socials,
   ScrollToTopOnNavigate,
 } from "../constants/data";
+import Logo from "./ui/Logo";
 
 const Navbar = ({ data: navLinks }) => {
   const [openDropdownId, setOpenDropdownId] = useState(null);
@@ -30,13 +30,7 @@ const Navbar = ({ data: navLinks }) => {
         <Socials />
 
         <h1>
-          <Link to="/">
-            <img
-              src={logo}
-              alt="Mithila Yatri Niwas"
-              className="w-20 h-12 md:w-32 md:h-24 p-1 object-contain transition-linear hover:scale-110 drop-shadow-lg"
-            />
-          </Link>
+          <Logo styles="w-20 h-12 md:w-32 md:h-24 p-2 object-contain transition-linear hover:scale-105 drop-shadow-lg" />
         </h1>
 
         <Button
@@ -49,13 +43,7 @@ const Navbar = ({ data: navLinks }) => {
         <div className="absolute top-0 inset-0 w-full h-12 bg-[url('/src/assets/graphics/floral-pattern.avif')] bg-contain bg-repeat-x opacity-10 -z-20 mix-blend-darken" />
 
         <div className="flex md:hidden items-center justify-between pr-4">
-          <Link to="/">
-            <img
-              src={logo}
-              alt="Mithila Yatri Niwas"
-              className="w-20 h-12 p-1 object-contain transition-linear hover:scale-110 drop-shadow-sm"
-            />
-          </Link>
+          <Logo styles="w-20 h-12 p-1 object-contain transition-linear hover:scale-110 drop-shadow-sm" />
           <button
             className="relative p-2 "
             onClick={toggleMenu}
@@ -76,13 +64,13 @@ const Navbar = ({ data: navLinks }) => {
         </div>
 
         <div
-          className={`py-6 md:p-0 bg-alt-logo-clr md:bg-transparent h-auto md:h-full transition-all duration-300 ease-out ${
+          className={`py-6 md:p-0 bg-alt-logo-clr md:bg-transparent h-screen md:h-full transition-all duration-300 ease-out ${
             isMenuOpen ? "scale-x-0 md:scale-x-100" : "scale-x-100"
           }`}
         >
           <div className="md:hidden absolute inset-0 size-full bg-[url('/src/assets/graphics/flowers.webp')] bg-contain bg-repeat mix-blend-multiply opacity-20 -z-20" />
 
-          <ul className="h-auto md:h-full flex flex-wrap md:flex-nowrap md:flex-row items-center justify-center gap-6 md:gap-12 font-medium cursor-pointer tracking-wider">
+          <ul className="my-8 md:my-0 h-auto md:h-full flex flex-wrap md:flex-nowrap md:flex-row items-center justify-center gap-6 md:gap-12 font-medium cursor-pointer tracking-wider">
             {navLinks.map((link) => (
               <li key={link.id} className={`relative`}>
                 {link.subLinks ? (
@@ -144,17 +132,7 @@ const Navbar = ({ data: navLinks }) => {
               </div>
 
               <div className="col-span-3 md:col-span-1 flex items-center justify-center flex-col gap-10 order-1 md:order-2">
-                <Link to="/">
-                  <img
-                    src={logo}
-                    alt="Mithila Yatri Niwas"
-                    className="w-full h-32 lg:h-48 md:p-1 object-contain rounded-xl"
-                    style={{
-                      filter:
-                        "brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(38%) hue-rotate(254deg) brightness(110%) contrast(110%)",
-                    }}
-                  />
-                </Link>
+                <Logo styles="filter-white w-full h-32 lg:h-48 md:p-1 object-contain rounded-xl" />
                 <Socials />
               </div>
             </div>

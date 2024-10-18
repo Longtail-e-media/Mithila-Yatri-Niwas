@@ -1,7 +1,7 @@
 import React from "react";
-import { placesToVistContents, Direction } from "../constants/data";
+import { Direction, withDataFetching } from "../constants/data";
 
-const Visit = () => {
+const Visit = ({ data: placesToVistContents }) => {
   return (
     <>
       <section className="bg-logo-bg responsive-banner">
@@ -14,7 +14,7 @@ const Visit = () => {
             <p className="text-base text-gray-600 mt-4">
               Discover the charm of proximity with Nearby Location, your gateway
               to local treasures. Uncover hidden gems and popular spots, all
-              just a stone’s throw away. It’s your personal compass for
+              just a stone's throw away. It's your personal compass for
               adventure, leisure, and everything in between.
             </p>
           </div>
@@ -58,4 +58,15 @@ const Visit = () => {
   );
 };
 
-export default Visit;
+const transformPlacesToVistContents = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return placesToVistContents;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_placestovisit.php",
+  transformPlacesToVistContents
+)(Visit);

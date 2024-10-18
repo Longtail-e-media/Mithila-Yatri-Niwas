@@ -1,12 +1,11 @@
 import React from "react";
 import {
-  dineContents,
+  withDataFetching,
   PackageSlider,
   BreadCrumb,
   RoomAmenities,
   Reservation,
   PackageList,
-  withDataFetching,
 } from "../constants/data";
 import { Link } from "react-router-dom";
 
