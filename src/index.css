@@ -40,11 +40,13 @@
   }
 
   .filter-black {
-    filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(0%) hue-rotate(21deg) brightness(97%) contrast(103%);
+    filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(0%)
+      hue-rotate(21deg) brightness(97%) contrast(103%);
   }
 
   .filter-white {
-    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%)
+      hue-rotate(288deg) brightness(102%) contrast(102%);
   }
 }
 
@@ -81,10 +83,9 @@
   h5::selection,
   a::selection {
     @apply bg-logo-bg text-logo-clr;
-
   }
 
-  div[aria-hidden=true] {
+  div[aria-hidden="true"] {
     display: none;
   }
 
@@ -99,9 +100,7 @@
   select:-webkit-autofill:focus {
     @apply border-b-2 border-logo-clr transition-[background-color] duration-[5000s] delay-0 ease-in-out;
   }
-
 }
-
 
 .slick-initialized .slick-slide {
   @apply px-2;
@@ -128,4 +127,18 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
+}
+
+.slick-track,
+.slick-slide,
+.slick-slide img:focus-visible {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+*:focus-visible {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
 }

@@ -8,9 +8,18 @@ import {
   PackageList,
 } from "../constants/data";
 import { Link } from "react-router-dom";
+import Meta from "../utils/Meta";
 
 const DinePage = ({ data: dineContents }) => {
-  const { title, description, dineCategories } = dineContents[0];
+  const {
+    title,
+    description,
+    menuPdf,
+    dineCategories,
+    meta_keywords,
+    meta_description,
+  } = dineContents[0];
+  const { menu } = dineCategories[0];
   const [activeDine, setActiveDine] = React.useState(dineCategories[0]);
 
   const handleDineClick = (dineId) => {
@@ -20,6 +29,12 @@ const DinePage = ({ data: dineContents }) => {
 
   return (
     <>
+      <Meta
+        title={`${title} - Mithila Yatri Niwas`}
+        keywords={meta_keywords}
+        description={meta_description}
+        canonicalUrl="https://mithilayatriniwas.com/dine"
+      />
       <div className="responsive-banner relative overflow-hidden">
         <PackageSlider
           contents={dineCategories}
@@ -35,12 +50,14 @@ const DinePage = ({ data: dineContents }) => {
             {description}
           </p>
           <div className="mt-8 w-full">
-            <Link
-              to="#menu"
+            <a
+              href={menu}
               className="font-title text-custom-white bg-alt-logo-clr hover:bg-logo-clr px-6 py-2 rounded-full transition-linear group"
+              target="_blank"
+              download
             >
               View Menu
-            </Link>
+            </a>
           </div>
         </div>
 

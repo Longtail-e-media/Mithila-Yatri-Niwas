@@ -1,10 +1,17 @@
 import React from "react";
 import { enquiryFormFields } from "../constants/data";
 import EnquiryForm from "../components/ui/EnquiryForm";
+import Meta from "../utils/Meta";
 
 const Enquiry = () => {
   return (
     <>
+      <Meta
+        title="Enquiry Form"
+        meta_description="Fill out the form to make a reservation."
+        meta_keywords="enquiry, reservation, contact"
+        canonicalUrl={"https://mithilayatriniwas.com/enquiry-form"}
+      />
       <section id="enquiry-form" className="responsive-banner bg-alt-bg">
         <div
           className={`absolute inset-0 h-full w-full bg-[url('/src/assets/graphics/pattern-mandala.avif')] bg-repeat -z-10 mix-blend-multiply opacity-30`}

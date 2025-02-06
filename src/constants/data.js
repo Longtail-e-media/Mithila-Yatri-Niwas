@@ -290,7 +290,7 @@ export const socialLinks = [
   {
     icon: "TbPhone",
     title: "Number",
-    url: "tel:+9779820113410",
+    url: "tel:+9779820113412",
   },
   // {
   //   icon: HiOutlineMail,
@@ -879,9 +879,9 @@ export const locationDetails = [
     url: "https://maps.app.goo.gl/aaeWHF1y7NZuPC7J8",
   },
   {
-    title: "+977-9820113410",
+    title: "+977-9820113412",
     icon: "TbPhone",
-    url: "tel:+9779820113410",
+    url: "tel:+9779820113412",
   },
   {
     title: "fo@mithilayatriniwas.com",
@@ -1435,4 +1435,27 @@ export const footerContents = {
       alt: "Make my trip",
     },
   ],
+};
+
+
+// site regulars consists of .. sitetitle sitename location_map email_address fiscal_address contact_info brief icon_upload logo_upload gallery_upload contact_upload meta_title site_keywords site_description hotel_page booking_code whatsapp_a
+
+export const siteRegulars = {
+  sitetitle: "Mithila Yatri Niwas",
+  sitename: "Mithila Yatri Niwas",
+  location_map: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1781.7041110251569!2d85.92215268864092!3d26.731346194188955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x39ec414cff7d8891%3A0xb626d6ab90442f61!2sMithila%20Yatri%20Niwas%2C%20Janakpur!3m2!1d26.732046399999998!2d85.9219169!4m5!1s0x39ec414cff7d8891%3A0xb626d6ab90442f61!2sMithila%20Yatri%20Niwas%2C%20Janakpur!3m2!1d26.732046399999998!2d85.9219169!5e0!3m2!1sen!2snp!4v1714910137389!5m2!1en!2snp",
+  email_address: "fo@mithilayatriniwas.com",
+  fiscal_address: "Janakpur, Nepal",
+  contact_info: "Janakpur, Nepal",
+  brief: "Mithila Yatri Niwas is a luxury hotel located in the heart of Janakpur, Nepal. We offer a range of services and amenities to make your stay as comfortable and enjoyable as possible.",
+  icon_upload: "https://mithila-yatri.pages.dev/assets/mithila-BauZmQvB.webp",
+  logo_upload: "https://mithila-yatri.pages.dev/assets/mithila-BauZmQvB.webp",
+  gallery_upload: "https://mithila-yatri.pages.dev/assets/mithila-BauZmQvB.webp",
+  contact_upload: "https://mithila-yatri.pages.dev/assets/mithila-BauZmQvB.webp",
+  meta_title: "Mithila Yatri Niwas",
+  site_keywords: "mithila yatri niwas, janakpur hotel, janakpur accommodation, janakpur hotel booking",
+  site_description: "Mithila Yatri Niwas is a luxury hotel located in the heart of Janakpur, Nepal. We offer a range of services and amenities to make your stay as comfortable and enjoyable as possible.",
+  hotel_page: "https://mithila-yatri.pages.dev/",
+  booking_code: "MITHILA",
+  whatsapp_a: "+9779857020000",
 };

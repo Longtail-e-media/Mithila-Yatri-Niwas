@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { FaWhatsapp } from "../../constants/data";
 import { Link } from "react-router-dom";
+import { withDataFetching } from "../../constants/data";
 
-const WhatsApp = () => {
+const WhatsApp = ({ data: siteRegulars }) => {
   const [showButton, setShowButton] = useState(false);
+
+  const { whatsapp_a } = siteRegulars;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +33,7 @@ const WhatsApp = () => {
   return (
     <>
       <Link
-        to="https://wa.me/+9779820113410"
+        to={`https://wa.me/${whatsapp_a}`}
         target="_blank"
         rel="noopener noreferrer"
         className={`${
@@ -46,4 +49,15 @@ const WhatsApp = () => {
   );
 };
 
-export default WhatsApp;
+const transformWhatsApp = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return siteRegulars;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_siteregulars.php",
+  transformWhatsApp
+)(WhatsApp);

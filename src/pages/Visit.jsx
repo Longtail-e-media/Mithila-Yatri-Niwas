@@ -1,9 +1,15 @@
 import React from "react";
 import { Direction, withDataFetching } from "../constants/data";
+import Meta from "../utils/Meta";
 
 const Visit = ({ data: placesToVistContents }) => {
   return (
     <>
+      <Meta
+        title="Places To Visit | Mithila Yatri Niwas"
+        meta_description="Discover the charm of proximity with Nearby Location, your gateway to local treasures. Uncover hidden gems and popular spots, all just a stone's throw away. It's your personal compass for adventure, leisure, and everything in between."
+        canonicalUrl="https://mithilayatriniwas.com/places-to-visit"
+      />
       <section className="bg-logo-bg responsive-banner">
         <div
           className={`absolute inset-0 h-full w-full bg-[url('/src/assets/graphics/pattern-mandala.avif')] bg-repeat -z-10 mix-blend-multiply opacity-20`}

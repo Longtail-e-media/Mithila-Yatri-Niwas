@@ -43,7 +43,6 @@ export const useForm = (initialState, validate) => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Success:", data);
         setFormStatus("success");
         setTimeout(() => setFormStatus(null), 3000);
       } else {

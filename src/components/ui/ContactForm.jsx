@@ -61,7 +61,6 @@
 
 //       if (response.ok) {
 //         const data = await response.json();
-//         console.log("Success:", data);
 //         setFormStatus("success");
 //         setTimeout(() => setFormStatus(null), 3000);
 //       } else {
@@ -164,7 +163,6 @@
 
 // export default ContactForm;
 
-
 import React, { useState } from "react";
 import { ReCaptcha, Toast, FormButton } from "../../constants/data";
 import { useForm } from "../../hooks/useForm";
@@ -174,7 +172,7 @@ const ContactForm = ({ contactFormFields }) => {
     acc[field.id] = "";
     return acc;
   }, {});
-  
+
   const validateForm = (formData) => {
     for (const key in formData) {
       if (formData[key].trim() === "") {
@@ -184,13 +182,8 @@ const ContactForm = ({ contactFormFields }) => {
     return true;
   };
 
-  const {
-    formData,
-    formStatus,
-    handleChange,
-    handleSubmit,
-    setFormStatus,
-  } = useForm(initialState, validateForm);
+  const { formData, formStatus, handleChange, handleSubmit, setFormStatus } =
+    useForm(initialState, validateForm);
 
   const [recaptchaToken, setRecaptchaToken] = useState(null);
 
@@ -200,7 +193,15 @@ const ContactForm = ({ contactFormFields }) => {
 
   return (
     <>
-      <form onSubmit={(e) => handleSubmit(e, recaptchaToken, "https://mithilayatriniwas.com/enquery_mail_react.php")}>
+      <form
+        onSubmit={(e) =>
+          handleSubmit(
+            e,
+            recaptchaToken,
+            "https://mithilayatriniwas.com/enquery_mail_react.php"
+          )
+        }
+      >
         <div className="grid sm:grid-cols-2 gap-8">
           {contactFormFields.map((field) => (
             <div

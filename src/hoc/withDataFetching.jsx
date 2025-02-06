@@ -77,7 +77,8 @@ const withDataFetching =
         }
       }, [url, transformData]);
 
-      if (loading) return <Loading />;
+      // if (loading) return <Loading />;
+      if (loading) return <></>;
       if (error) return <p>Error loading data: {error.message}</p>;
 
       return <WrappedComponent data={data} {...props} />;

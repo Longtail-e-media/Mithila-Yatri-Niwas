@@ -7,8 +7,6 @@ const Reservation = () => {
     <>
       <div className="container max-w-5xl relative bg-alt-bg/40 p-8">
         <div
-          // className={`absolute inset-0 h-full w-full bg-[url('https://img.freepik.com/premium-vector/simple-ornate-background-with-elegant-motifs_1442-34895.jpg?size=626&ext=jpg&ga=GA1.1.553209589.1714262400&semt=ais')] bg-repeat z-0 mix-blend-overlay opacity-35`}
-          // className={`absolute inset-0 h-full w-full bg-[url('/src/assets/graphics/hmm.png')] bg-repeat z-0 mix-blend-overlay opacity-35`}
           className={`absolute inset-0 h-full w-full bg-[url('/src/assets/graphics/pattern-mandala.avif')] bg-repeat -z-10 mix-blend-multiply opacity-70`}
         />
         <div className="contents">
@@ -33,12 +31,12 @@ const Reservation = () => {
               <span className="text-gray-600">
                 or call us directly
                 <Link
-                  to="tel:+9779820113410"
+                  to="tel:+9779820113412"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ml-2 text-custom-black/90 text-xl font-semibold hover:text-alt-logo-clr transition-linear"
                 >
-                  +977-9820113410
+                  +977-9820113412
                 </Link>
               </span>
 

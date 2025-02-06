@@ -8,9 +8,16 @@ import {
   Reservation,
   PackageList,
 } from "../constants/data";
+import Meta from "../utils/Meta";
 
 const AccommodationPage = ({ data: accommodationContents }) => {
-  const { title, description, roomsCategories } = accommodationContents[0];
+  const {
+    title,
+    description,
+    roomsCategories,
+    meta_keywords,
+    meta_description,
+  } = accommodationContents[0];
   const [activeRoom, setActiveRoom] = React.useState(roomsCategories[0]);
 
   const handleRoomClick = (roomId) => {
@@ -20,6 +27,12 @@ const AccommodationPage = ({ data: accommodationContents }) => {
 
   return (
     <>
+      <Meta
+        title={`${title} - Mithila Yatri Niwas`}
+        keywords={meta_keywords}
+        description={meta_description}
+        canonicalUrl="https://mithilayatriniwas.com/accommodation"
+      />
       <div className="responsive-banner relative overflow-hidden">
         <PackageSlider
           contents={roomsCategories}

@@ -7,9 +7,16 @@ import {
   Reservation,
   PackageList,
 } from "../constants/data";
+import Meta from "../utils/Meta";
 
 const HallPage = ({ data: hallContents }) => {
-  const { title, description, hallCategories } = hallContents[0];
+  const {
+    title,
+    description,
+    hallCategories,
+    meta_keywords,
+    meta_description,
+  } = hallContents[0];
   const [activeHall, setActiveHall] = useState(hallCategories[0]);
 
   const handleHallClick = (hallId) => {
@@ -19,6 +26,12 @@ const HallPage = ({ data: hallContents }) => {
 
   return (
     <>
+      <Meta
+        title={`${title} - Mithila Yatri Niwas`}
+        keywords={meta_keywords}
+        description={meta_description}
+        canonicalUrl="https://mithilayatriniwas.com/hall"
+      />
       <div className="responsive-banner relative overflow-hidden">
         <PackageSlider
           contents={hallCategories}

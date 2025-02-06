@@ -10,6 +10,7 @@ import {
   ScrollToTopOnNavigate,
 } from "../constants/data";
 import Logo from "./ui/Logo";
+import Rojai from "./ui/Rojai";
 
 const Navbar = ({ data: navLinks }) => {
   const [openDropdownId, setOpenDropdownId] = useState(null);
@@ -33,10 +34,11 @@ const Navbar = ({ data: navLinks }) => {
           <Logo styles="w-20 h-12 md:w-32 md:h-24 p-2 object-contain transition-linear hover:scale-105 drop-shadow-lg" />
         </h1>
 
-        <Button
+        {/* <Button
           title="Booking"
           router="https://www.mithilayatriniwas.com/result.php?hotel_code=gBRaLW"
-        />
+        /> */}
+        <Rojai rojaiClassName="rounded-full relative w-36 h-10 cursor-pointer flex items-center justify-center gap-2 text-custom-white bg-alt-logo-clr group hover:bg-logo-clr active:bg-alt-logo-clr transition-all duration-300 ease-linear" />
       </header>
 
       <nav className="sticky top-0 h-12 bg-logo-bg/70 md:bg-custom-black/30 backdrop-blur-sm md:border-t border-b border-custom-white/50 text-custom-white drop-shadow-lg z-50">
@@ -136,12 +138,8 @@ const Navbar = ({ data: navLinks }) => {
                 <Socials />
               </div>
             </div>
-            <Button
-              title="Booking"
-              router="https://www.mithilayatriniwas.com/result.php?hotel_code=gBRaLW"
-              // navClassName="block md:hidden border-2 border-solid border-red-600"
-              navClassName="mt-16 block md:hidden outline outline-2 outline-offset-0 "
-            />
+
+            <Rojai rojaiClassName="mt-16 md:hidden outline outline-2 outline-offset-0 rounded-full relative w-36 h-10 cursor-pointer flex items-center justify-center gap-2 text-custom-white bg-alt-logo-clr group hover:bg-logo-clr hover:outline-logo-clr active:bg-alt-logo-clr transition-all duration-300 ease-linear" />
           </div>
         </div>
       </nav>

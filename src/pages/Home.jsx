@@ -10,10 +10,12 @@ import {
   Testimonials,
   PlacesToVisit,
 } from "../constants/data";
+import Popup from "../components/Popup";
 
 const Home = () => {
   return (
     <>
+    <Popup />
       <Hero />
       <About />
       {/* <Direction /> */}

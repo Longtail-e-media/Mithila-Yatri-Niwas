@@ -46,7 +46,8 @@ const PackageContent = ({ room }) => {
                       alt={infoValue}
                     />
                     <span className="font-bold">{infoKey}: </span>
-                    {infoValue.value}
+                    {/* {infoValue.value} */}
+                    {infoValue.value ? infoValue.value : "N/A"}
                   </span>
                 </li>
               ))}

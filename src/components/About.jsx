@@ -1,18 +1,18 @@
 import React from "react";
 import {
-  aboutContents,
   SvgWave,
   AboutGallery,
   LearnMore,
   namaste,
   rojai,
 } from "../constants/data";
+import { withDataFetching } from "../constants/data";
 import { Link } from "react-router-dom";
 
-const About = () => {
-  const { text, galleryImages } = aboutContents;
+const About = ({ data: aboutContents }) => {
+  const { text } = aboutContents;
 
-  const { heading, paragraph, subheading, book } = text;
+  const { heading, paragraph, booking } = text;
 
   return (
     <>
@@ -38,19 +38,19 @@ const About = () => {
             </p>
 
             <h3 className="capitalize text-base sm:text-base md:text-xl font-bold tracking-wider [word-spacing:3px]">
-              {subheading}
+              Unlock Unforgettable Memories -
               <Link
-                to={rojai}
+                to={booking}
                 target="_blank"
                 className="underline underline-offset-4 hover:underline-offset-2 font-title text-logo-clr hover:underline duration-300 transition-linear"
               >
-                {book}
+                Book Your Stay
               </Link>
             </h3>
           </div>
 
           <div className="mt-16">
-            <AboutGallery images={galleryImages} />
+            <AboutGallery />
           </div>
 
           <div className="flex items-center justify-center my-8">
@@ -67,4 +67,15 @@ const About = () => {
   );
 };
 
-export default About;
+const transformAboutContents = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return aboutContents;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_aboutus.php",
+  transformAboutContents
+)(About);

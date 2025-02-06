@@ -5,22 +5,8 @@ const Janaki = () => {
   return (
     <>
       <div
-        // className={`relative min-h-screen bg-[url('https://3.bp.blogspot.com/_dFHgYO4fOVk/S4LXrpqQ-JI/AAAAAAAAAA0/-Nh2V4Xv0dE/s1600/FILE0561.JPG')] bg-cover bg-top bg-fixed`}
-        // className={`relative min-h-screen bg-[url('https://scontent.fktm10-1.fna.fbcdn.net/v/t39.30808-6/307644824_6560528780646526_8981790166085048237_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=yU5dbIdT3gEQ7kNvgH7njhL&_nc_ht=scontent.fktm10-1.fna&oh=00_AfAsy8OQYgQFc3-rggatBdgD5MOEw8A2yibQxlvE7HBfBA&oe=66390858')] bg-cover bg-top bg-fixed`}
-        // className={`relative min-h-screen bg-[url('/src/assets/janakiTemple.jpg')] bg-cover bg-top bg-fixed`}
         className={`relative min-h-screen bg-transparent bg-none`}
       >
-        {/* <div
-          src="/src/assets/janakiSketch.png"
-          className={`absolute bottom-0 h-full w-full bg-[url('/src/assets/sketch.webp')] bg-contain bg-bottom bg-repeat-x bg-fixed z-0`}
-        /> */}
-        <div
-          className={`absolute inset-0 h-full w-full bg-[url('/src/assets/graphics/test1.png')] bg-fixed bg-cover bg-center bg-no-repeat z-0 mix-blend-darken opacity-50`}
-        />
-        {/* <div
-          className={`absolute bottom-0 h-full w-full bg-[url('/src/assets/janaki_art.webp')] bg-fixed bg-contain bg-bottom bg-repeat-x z-0 mix-blend-multiply`}
-        /> */}
-        {/* <div className="absolute bg-black/40 inset-0 z-0" /> */}
         <section className="z-10 text-custom-black">
           <ScrollReveal para="The Janaki Temple is a Hindu temple in Janakpur, Nepal, dedicated to the Hindu goddess Sita." />
           <ScrollReveal para="It is an example of mixed Islam and Hindu Nepali architecture. It is often considered the most important model of Mughal architecture in Nepal." />

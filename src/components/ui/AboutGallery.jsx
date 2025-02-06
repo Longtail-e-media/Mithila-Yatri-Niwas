@@ -1,5 +1,4 @@
 import React from "react";
-import { aboutContents } from "../../constants/data";
 import {
   LightGallery,
   lgZoom,
@@ -7,8 +6,9 @@ import {
   lgThumbnail,
   lgFullscreen,
 } from "../../constants/library";
+import { withDataFetching } from "../../constants/data";
 
-const AboutGallery = () => {
+const AboutGallery = ({ data: aboutContents }) => {
   const { galleryImages } = aboutContents;
 
   return (
@@ -40,4 +40,15 @@ const AboutGallery = () => {
   );
 };
 
-export default AboutGallery;
+const transformAboutGallery = (data) => {
+  const safeData = (code) => {
+    const func = new Function(code + "return aboutContents;");
+    return func();
+  };
+  return safeData(data);
+};
+
+export default withDataFetching(
+  "https://mithilayatriniwas.com/api/api_aboutus.php",
+  transformAboutGallery
+)(AboutGallery);
