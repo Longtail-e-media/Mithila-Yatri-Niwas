@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import popup from "../assets/popup/newyear.webp";
+import { Link } from "react-router-dom";
 
 const popupContents = [
   {
@@ -69,13 +70,14 @@ const Popup = () => {
         >
           &times;
         </button>
+        <Link to="/contact">
         {popupContents.length === 1 ? (
           <div className="text-center">
             <img
               src={popupContents[0].img.src}
               alt={popupContents[0].img.alt}
               className="size-full aspect-square shadow object-contain"
-            />
+              />
           </div>
         ) : (
           <Slider {...settings}>
@@ -85,11 +87,12 @@ const Popup = () => {
                   src={content.img.src}
                   alt={content.img.alt}
                   className="size-full aspect-square shadow object-cover"
-                />
+                  />
               </div>
             ))}
           </Slider>
         )}
+        </Link>
       </div>
     </div>
   );
