@@ -70,7 +70,7 @@ const Popup = () => {
         >
           &times;
         </button>
-        <Link to="/contact">
+        <Link to="/contact#contact-form" onClick={closePopup}>
         {popupContents.length === 1 ? (
           <div className="text-center">
             <img

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   withDataFetching,
   contactFormFields,
@@ -12,6 +12,15 @@ import Meta from "../utils/Meta";
 
 const Contact = ({ data: siteRegulars }) => {
   const { contact_upload, contact_meta_title } = siteRegulars;
+
+  useEffect(() => {
+    if (window.location.hash === "#contact-form") {
+      const element = document.getElementById("contact-form");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+  }, []);
 
   return (
     <>
