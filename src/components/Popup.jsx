@@ -3,19 +3,19 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import popup from "../assets/popup/popup.webp";
+import popup from "../assets/popup/newyear.webp";
 
 const popupContents = [
   {
-    title: "New year 2025",
+    title: "New year 2083",
     description:
-      "The rooms are in new year offer; NRS. 3000 for single and NRS. 5000 for couple.",
+      "Celebrate the new year with us! Enjoy exclusive offers and discounts on our products. Don't miss out on this limited-time opportunity to start the year with amazing deals!",
     img: {
       src: popup,
       alt: "Popup Image",
     },
-    startDate: "2024-12-25",
-    endDate: "2024-12-31",
+    startDate: "2026-4-5",
+    endDate: "2026-4-14",
   },
 ];
 
@@ -64,7 +64,7 @@ const Popup = () => {
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute top-0 right-0 text-white text-4xl"
+          className="absolute top-0 right-[50px] text-white text-4xl"
           onClick={closePopup}
         >
           &times;
@@ -74,7 +74,7 @@ const Popup = () => {
             <img
               src={popupContents[0].img.src}
               alt={popupContents[0].img.alt}
-              className="size-full aspect-square shadow object-cover"
+              className="size-full aspect-square shadow object-contain"
             />
           </div>
         ) : (
