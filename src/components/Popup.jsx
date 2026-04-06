@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const popupContents = [
   {
-    title: "New year 2083",
+    title: "New Year 2083",
     description:
       "Celebrate the new year with us! Enjoy exclusive offers and discounts on our products. Don't miss out on this limited-time opportunity to start the year with amazing deals!",
     img: {
